@@ -1,8 +1,10 @@
-name: Pullinter
+name: Pull request linter
 
 on:
+  push:
+    branches: [main]
   pull_request:
-    types: [opened, edited]
+    branches: [main, develop]
 
 jobs:
   checktitle:
