@@ -2,7 +2,7 @@ name: Build and Deploy Vite React App to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ['Linters']
+    workflows: [Linters]
     branches: [main]
     types:
       - completed
@@ -11,14 +11,14 @@ on:
 
 jobs:
   build-and-deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Replace with your desired Node.js version
+          node-version: '20' # Replace with your desired Node.js version
       - name: Install packages
         run: npm install
 
