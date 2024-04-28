@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.husky/
+public/
+*.lock
+.eslintrc.cjs
+'tailwind.config.js'
+'postcss.config.js'
