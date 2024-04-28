@@ -1,8 +1,6 @@
 name: Pull request linter
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main, develop]
 

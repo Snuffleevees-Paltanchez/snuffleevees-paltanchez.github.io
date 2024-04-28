@@ -22,6 +22,12 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
   },
