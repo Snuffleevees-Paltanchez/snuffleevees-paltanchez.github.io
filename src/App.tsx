@@ -1,11 +1,17 @@
-import { Avatar } from '@nextui-org/react'
+import { Route, Routes } from 'react-router-dom'
+import Navbar from '@/components/navbar/Navbar'
+import LandingPage from '@/pages/LandingPage'
+import NotFound from '@/pages/NotFound'
 
 function App() {
   return (
-    <div className="text-primary">
-      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
-      Hello World!
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   )
 }
 

@@ -19,6 +19,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': [2, { extensions: ['.ts', '.tsx'] }],
     'react/react-in-jsx-scope': 'off',
     'react/jsx-uses-react': 'off',
@@ -30,5 +31,8 @@ module.exports = {
     ],
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
+    // Due to airbnb eslint config issues
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
   },
 }
