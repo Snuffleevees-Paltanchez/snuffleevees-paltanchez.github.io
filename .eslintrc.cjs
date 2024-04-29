@@ -16,7 +16,7 @@ module.exports = {
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['eslint-plugin-import', '@typescript-eslint', 'import', 'react-refresh'],
+  plugins: ['react-refresh'],
   rules: {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/jsx-props-no-spreading': 'off',
