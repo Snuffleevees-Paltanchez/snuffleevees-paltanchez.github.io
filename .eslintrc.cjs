@@ -16,7 +16,7 @@ module.exports = {
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ["eslint-plugin-import", "@typescript-eslint", 'import', 'react-refresh'],
+  plugins: ['eslint-plugin-import', '@typescript-eslint', 'import', 'react-refresh'],
   rules: {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/jsx-props-no-spreading': 'off',
@@ -33,6 +33,6 @@ module.exports = {
     quotes: ['error', 'single'],
     // Due to airbnb eslint config issues
     'import/extensions': 'off',
-    "import/no-unresolved": "off",
+    'import/no-unresolved': 'off',
   },
 }
