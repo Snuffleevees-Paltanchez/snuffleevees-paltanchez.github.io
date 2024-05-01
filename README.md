@@ -12,6 +12,16 @@
 
 This template uses Husky to run ESLint and Prettier on commit. If you want to skip this, use `git commit --no-verify`.
 
+## Tests
+
+We use Cypress for end-to-end and component testing. Currently you can execute the following scripts:
+
+- `npm run cypress`: This command opens the Cypress Test Runner, allowing you to interactively run and debug tests.
+- `npm run cy:run-e2e`: This command runs end-to-end tests in headless mode.
+- `npm run cy:run-unit`: This command runs component tests in headless mode.
+
+Make sure to review the [Cypress documentation](https://docs.cypress.io/) for more advanced usage and configuration options.
+
 ## Pull requests conventions
 
 Our PR merging process follows a **squash and merge** policy. This means individual commit messages aren't as important as the pull request title and description. All individual commits are squashed into a single commit, defined by the PR details, and merged into the corresponding branches.

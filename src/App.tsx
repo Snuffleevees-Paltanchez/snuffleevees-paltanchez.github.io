@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path={`${BASE_URL}/`} element={<LandingPage />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
   )
