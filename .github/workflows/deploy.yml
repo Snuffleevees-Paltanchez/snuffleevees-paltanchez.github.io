@@ -19,6 +19,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20' # Replace with your desired Node.js version
+      - name: "Copy .env file from secrets"
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
       - name: Install packages
         run: npm install
 
