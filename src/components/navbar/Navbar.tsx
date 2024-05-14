@@ -1,5 +1,6 @@
 import { Navbar as NavBarComponent, NavbarBrand, NavbarContent } from '@nextui-org/react'
 import Logo from '@/components/Logo'
+import User from '@/components/navbar/User'
 
 export default function Navbar() {
   return (
@@ -9,6 +10,9 @@ export default function Navbar() {
           <Logo />
           <span className="text-2xl tracking-wider font-light">MikBooks</span>
         </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <User />
       </NavbarContent>
     </NavBarComponent>
   )
