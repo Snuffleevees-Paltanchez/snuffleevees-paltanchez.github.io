@@ -84,3 +84,11 @@ export interface BooksResponse {
   totalItems: number
   items: Item[]
 }
+
+export type BookInfo = {
+  title: string
+  authors: string[]
+  description: string
+  image: string
+  publishedDate: string
+}

@@ -3,7 +3,7 @@ import { useQueryKey } from './queryKey'
 import { useBookInfoRequests } from './apiCalls'
 import { useBookInfoTransforms } from './dataTransforms'
 
-export type { BookInfo } from './dataTransforms'
+export type { BookInfo } from './types'
 
 /**
  * Hook to get the book info given an ISBN
