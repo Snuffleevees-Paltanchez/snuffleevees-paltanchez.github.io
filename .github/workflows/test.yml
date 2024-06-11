@@ -8,6 +8,7 @@ on:
 jobs:
   cypress-e2e-run:
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     strategy:
       fail-fast: false
     steps:
@@ -27,6 +28,7 @@ jobs:
 
   cypress-component-run:
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
