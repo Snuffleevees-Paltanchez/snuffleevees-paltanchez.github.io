@@ -5,7 +5,6 @@ import NotFound from '@/pages/NotFound'
 import Search from '@/pages/search/Search'
 import Admin from '@/pages/Admin'
 
-
 function App() {
   return (
     <>
