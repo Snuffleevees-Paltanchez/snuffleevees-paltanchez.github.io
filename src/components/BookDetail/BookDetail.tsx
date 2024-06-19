@@ -22,7 +22,7 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
       <div className="flex flex-col items-start">
         <h1 className="text-3xl font-semibold">{bookInfo.title}</h1>
         <span className="font-medium italic text-sm">{bookInfo.publishedDate}</span>
-        <span className="text-lg">{bookInfo?.authors.join(', ')}</span>
+        <span className="text-lg">{bookInfo.authors.join(', ')}</span>
         <p className="mt-3 font-semibold">Description</p>
         <p className="mb-6">{bookInfo.description}</p>
         <PriceTable isbn={isbn} />

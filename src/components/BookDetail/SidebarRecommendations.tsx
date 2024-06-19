@@ -10,7 +10,7 @@ export default function SidebarRecommendations({ genre }: { genre: string }) {
     price: 10000,
   }))
   return (
-    <div className="z-10 h-full min-w-fit bg-gray-200 float-left flex flex-col gap-4 py-5 px-5">
+    <div className="flex flex-col z-10 h-full min-w-fit bg-gray-200 float-left gap-4 py-5 px-5">
       {mockRecommendations.map((book, i) => (
         <BookCard key={i} isbn={book.isbn} price={book.price} />
       ))}
