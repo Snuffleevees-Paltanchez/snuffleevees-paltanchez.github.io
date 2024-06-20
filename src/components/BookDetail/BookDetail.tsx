@@ -3,6 +3,8 @@ import PriceTable from '@/components/BookDetail/PriceTable'
 import FavoriteChip from '@/components/FavoriteChip'
 import BookImage from '@/components/BookImage'
 import { type BookInfo } from '@/hooks/queries/useBookInfo'
+import { Plus } from 'lucide-react'
+
 
 export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo: BookInfo }) {
   return (
@@ -12,7 +14,7 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
         <div className="flex flex-row gap-1 items-center">
           <FavoriteChip customClasses="text-base" markedAsFavoriteCount={0} />
           <Button radius="full" color="primary" variant="light">
-            + Add to favorites
+            <Plus /> Add to favorites
           </Button>
         </div>
         <p className="text-sm">
@@ -23,6 +25,7 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
         <h1 className="text-3xl font-semibold">{bookInfo.title}</h1>
         <span className="font-medium italic text-sm">{bookInfo.publishedDate}</span>
         <span className="text-lg">{bookInfo.authors.join(', ')}</span>
+        <span className="text-lg">{bookInfo.authors?.join(', ')}</span>
         <p className="mt-3 font-semibold">Description</p>
         <p className="mb-6">{bookInfo.description}</p>
         <PriceTable isbn={isbn} />
