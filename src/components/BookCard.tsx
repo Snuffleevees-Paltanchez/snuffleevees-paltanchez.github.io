@@ -1,9 +1,9 @@
+import { useNavigate, Link } from 'react-router-dom'
 import { Card, CardHeader, CardBody } from '@nextui-org/card'
-import { Chip } from '@nextui-org/chip'
-import { Image, Skeleton } from '@nextui-org/react'
-import { HeartIcon } from 'lucide-react'
-import noImage from '/no-image.png'
+import { Skeleton } from '@nextui-org/react'
 import { useBookInfoQuery, type BookInfo } from '@/hooks/queries/useBookInfo'
+import FavoriteChip from './FavoriteChip'
+import BookImage from './BookImage'
 
 export default function BookCard({
   isbn,
@@ -15,31 +15,27 @@ export default function BookCard({
   price: number
   markedAsFavoriteCount?: number
 }) {
+  const navigate = useNavigate()
   const bookInfoQuery = useBookInfoQuery(isbn)
   const bookInfo = bookInfoQuery.data || ({} as BookInfo)
   if (bookInfoQuery.isLoading) return <SkeletonCard />
   return (
     <Card className="min-w-[400px] max-w-[400px] flex flex-row justify-center">
-      <div className="relative min-w-[150px]">
-        <Image
-          src={bookInfo.image || noImage}
-          alt={bookInfo.title}
-          fallbackSrc={noImage}
-          radius="none"
-          className="bg-cover h-full"
-          removeWrapper
+      <div
+        className="relative min-w-[150px] cursor-pointer"
+        onClick={() => navigate(`/books/${isbn}`)}
+      >
+        <BookImage image={bookInfo.image} title={bookInfo.title} customClasses="h-full" />
+        <FavoriteChip
+          customClasses="absolute bottom-3 mx-2"
+          markedAsFavoriteCount={markedAsFavoriteCount}
         />
-        <Chip
-          color="primary"
-          className="absolute bottom-3 mx-2 z-10"
-          startContent={<HeartIcon size={16} fill="currentColor" />}
-        >
-          {markedAsFavoriteCount}
-        </Chip>
       </div>
       <div>
         <CardHeader className="flex-col items-start">
-          <h4 className="font-medium text-large">{bookInfo.title}</h4>
+          <Link to={`books/${isbn}`}>
+            <h4 className="font-medium text-large">{bookInfo.title}</h4>
+          </Link>
           <span className="font-medium italic">{bookInfo.publishedDate}</span>
           <span className="italic">{bookInfo.authors.join(', ')}</span>
         </CardHeader>
