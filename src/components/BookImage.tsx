@@ -1,15 +1,17 @@
-import { Image } from '@nextui-org/react'
+import { Image, ImageProps } from '@nextui-org/react'
 import noImage from '/no-image.png'
+interface BookImageProps extends ImageProps {
+  image?: string
+  title?: string
+  customClasses?: string
+}
 
 export default function BookImage({
   image = '',
   title = '',
   customClasses = '',
-}: {
-  image?: string
-  title?: string
-  customClasses?: string
-}) {
+  ...props
+}: BookImageProps) {
   return (
     <Image
       src={image || noImage}
@@ -18,6 +20,7 @@ export default function BookImage({
       radius="none"
       className={`bg-cover ${customClasses}`}
       removeWrapper
+      {...props}
     />
   )
 }

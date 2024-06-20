@@ -5,11 +5,17 @@ import SidebarRecommendations from '@/components/BookDetail/SidebarRecommendatio
 
 export default function BookDetailPage() {
   const { isbn } = useParams()
-  const bookInfoQuery = useBookInfoQuery(isbn || '')
+  if (!isbn) return <div> ISBN is not valid </div>
+  return <BookDetailSection isbn={isbn} />
+}
+
+const BookDetailSection = ({ isbn }: { isbn: string }) => {
+  const bookInfoQuery = useBookInfoQuery(isbn)
+  if (bookInfoQuery.isLoading) return <div> Loading... </div>
   const bookInfo = bookInfoQuery.data || ({} as BookInfo)
   return (
     <div className="flex flex-row relative">
-      <BookDetail isbn={isbn || ''} bookInfo={bookInfo} />
+      <BookDetail isbn={isbn} bookInfo={bookInfo} />
       <SidebarRecommendations genre={''} />
     </div>
   )

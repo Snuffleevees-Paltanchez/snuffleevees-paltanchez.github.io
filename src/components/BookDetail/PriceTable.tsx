@@ -34,7 +34,7 @@ export default function PriceTable({ isbn }: { isbn: string | undefined }) {
     [],
   )
   return (
-    <Table classNames={classNames}>
+    <Table classNames={classNames} aria-label="Prices comparison table">
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
@@ -44,7 +44,7 @@ export default function PriceTable({ isbn }: { isbn: string | undefined }) {
             {(columnKey) => {
               const value = getKeyValue(item, columnKey)
               if (columnKey === 'price') {
-                return <TableCell>${value}</TableCell>
+                return <TableCell className="font-semibold">${value}</TableCell>
               } else if (columnKey === 'rating') {
                 return (
                   <TableCell className="flex flex-row gap-2">
