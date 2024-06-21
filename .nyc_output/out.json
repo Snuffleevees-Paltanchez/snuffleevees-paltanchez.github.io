@@ -623,51 +623,20 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
       "mappings": "AAMS;AANT,2BAAoB;AAAsB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAK1C,wBAAwBA,KAAK,EAAE,GAAGC,MAAwB,GAAG;AAC3D,SAAO,uBAAC,eAAY,aAAa,GAAG,MAAM,IAAI,GAAIA,SAA3C;AAAA;AAAA;AAAA;AAAA,SAAiD;AAC1D;AAACC,KAFuBF;AAAI,IAAAE;AAAAC,aAAAD,IAAA",
-      "names": [
-        "Logo",
-        "props",
-        "_c",
-        "$RefreshReg$"
-      ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/Logo.tsx"
-      ],
+      "names": ["Logo", "props", "_c", "$RefreshReg$"],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/Logo.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/Logo.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -1559,46 +1528,16 @@
       "6": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        2,
-        2
-      ],
-      "5": [
-        2,
-        0
-      ],
-      "6": [
-        1,
-        0
-      ],
-      "7": [
-        1,
-        1
-      ],
-      "8": [
-        0,
-        0
-      ],
-      "9": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [2, 2],
+      "5": [2, 0],
+      "6": [1, 0],
+      "7": [1, 1],
+      "8": [0, 0],
+      "9": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -1625,9 +1564,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/User.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/User.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/User.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -1948,9 +1885,7 @@
     "b": {},
     "inputSourceMap": {
       "version": 3,
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/hooks/useQueryParams.ts"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/hooks/useQueryParams.ts"],
       "mappings": "AAAA,SAAS,eAAe;AACxB,SAAS,aAAa,mBAAmB;AAWlC,aAAM,iBAAiB,MAAM;AAClC,QAAM,WAAW,YAAY;AAC7B,QAAM,EAAE,QAAQ,SAAS,IAAI,YAAY;AACzC,QAAM,QAAQ,QAAQ,MAAM,IAAI,gBAAgB,MAAM,GAAG,CAAC,MAAM,CAAC;AACjE,QAAM,cAAc,QAAQ,MAAM,OAAO,YAAY,KAAK,GAAG,CAAC,KAAK,CAAC;AAEpE,QAAM,WAAW,CAAC,KAAa,UAAkB;AAC/C,UAAM,WAAW,IAAI,gBAAgB,KAAK;AAC1C,aAAS,IAAI,KAAK,KAAK;AACvB,aAAS,GAAG,QAAQ,IAAI,SAAS,SAAS,CAAC,EAAE;AAAA,EAC/C;AAEA,QAAM,cAAc,CAAC,QAAgB;AACnC,UAAM,WAAW,IAAI,gBAAgB,KAAK;AAC1C,aAAS,OAAO,GAAG;AACnB,aAAS,GAAG,QAAQ,IAAI,SAAS,SAAS,CAAC,EAAE;AAAA,EAC/C;AAEA,SAAO;AAAA,IACL;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF;AACF;",
       "names": []
     },
@@ -2976,42 +2911,15 @@
       "9": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        1,
-        0
-      ],
-      "6": [
-        1,
-        1
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [1, 0],
+      "6": [1, 1],
+      "7": [0, 0],
+      "8": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -3046,9 +2954,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/SearchInput.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/SearchInput.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/SearchInput.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -3794,38 +3700,14 @@
       "5": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -3844,9 +3726,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/Navbar.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/Navbar.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/navbar/Navbar.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -4502,41 +4382,15 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0
-      ],
-      "5": [
-        1,
-        0
-      ],
-      "6": [
-        1,
-        1
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0],
+      "5": [1, 0],
+      "6": [1, 1],
+      "7": [0, 0],
+      "8": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -4550,9 +4404,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/FavoriteChip.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/FavoriteChip.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/FavoriteChip.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -5296,51 +5148,18 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0
-      ],
-      "5": [
-        0
-      ],
-      "6": [
-        0
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        1,
-        0
-      ],
-      "9": [
-        1,
-        1
-      ],
-      "10": [
-        0,
-        0
-      ],
-      "11": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0],
+      "5": [0],
+      "6": [0],
+      "7": [0, 0],
+      "8": [1, 0],
+      "9": [1, 1],
+      "10": [0, 0],
+      "11": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -5355,9 +5174,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/BookImage.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/BookImage.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/BookImage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -6276,48 +6093,17 @@
       "6": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0
-      ],
-      "5": [
-        0
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        1,
-        0
-      ],
-      "8": [
-        1,
-        1
-      ],
-      "9": [
-        0,
-        0
-      ],
-      "10": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0],
+      "5": [0],
+      "6": [0, 0],
+      "7": [1, 0],
+      "8": [1, 1],
+      "9": [0, 0],
+      "10": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -6349,9 +6135,7 @@
         "_c2",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/BookCard.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/BookCard.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/BookCard.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -7017,38 +6801,14 @@
       "4": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -7169,9 +6929,7 @@
     "b": {},
     "inputSourceMap": {
       "version": 3,
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/hooks/queries/useBooks/queryKeys.ts"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/hooks/queries/useBooks/queryKeys.ts"],
       "mappings": "AAEO,aAAM,YAAY;AAAA,EACvB,KAAK,CAAC,OAAO;AAAA,EACb,QAAQ,CAAC,UAAqB,CAAC,GAAG,UAAU,KAAK,KAAK;AAAA,EACtD,QAAQ,CAAC,SAAiB,CAAC,GAAG,UAAU,KAAK,EAAE,KAAK,CAAC;AACvD;",
       "names": []
     },
@@ -7896,40 +7654,18 @@
       "7": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        0
-      ],
-      "3": [
-        0,
-        0
-      ],
-      "4": [
-        0
-      ],
-      "5": [
-        0
-      ],
-      "6": [
-        0
-      ],
-      "7": [
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 0],
+      "3": [0, 0],
+      "4": [0],
+      "5": [0],
+      "6": [0],
+      "7": [0]
     },
     "inputSourceMap": {
       "version": 3,
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/api/client.ts"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/api/client.ts"],
       "mappings": "AAMA,MAAM,uBAAuB,CAAC,WAAqC;AACjE,QAAM,iBAAiB,OAAO;AAAA,IAC5B,OAAO,QAAQ,UAAU,CAAC,CAAC,EAAE,OAAO,CAAC,CAAC,EAAE,KAAK,MAAM,UAAU,MAAS;AAAA,EACxE;AACA,QAAM,eAAe,IAAI,gBAAgB,cAAc;AACvD,MAAI,aAAa,MAAM;AACrB,WAAO,IAAI,aAAa,SAAS,CAAC;AAAA,EACpC;AACA,SAAO;AACT;AAEA,MAAM,gBAAgB,OACpB,SACA,UACA,YACe;AACf,QAAM,iBAAiC;AAAA,IACrC,SAAS;AAAA,MACP,QAAQ;AAAA,MACR,gBAAgB;AAAA,IAClB;AAAA,EACF;AAEA,QAAM,SAAyB,EAAE,GAAG,gBAAgB,GAAG,QAAQ;AAE/D,MAAI,OAAO,QAAQ;AACjB,gBAAY,qBAAqB,OAAO,MAAM;AAAA,EAChD;AAEA,MAAI;AACF,UAAM,WAAW,MAAM,MAAM,GAAG,OAAO,GAAG,QAAQ,IAAI,MAAM;AAE5D,QAAI,CAAC,SAAS,IAAI;AAChB,YAAM,IAAI,MAAM,uBAAuB,SAAS,MAAM,EAAE;AAAA,IAC1D;AAEA,UAAM,OAAU,MAAM,SAAS,KAAK;AACpC,WAAO;AAAA,EACT,SAAS,OAAO;AACd,WAAO,QAAQ,OAAO,KAAK;AAAA,EAC7B;AACF;AAWA,MAAM,SAAS,CAAC,aAAqB;AAAA,EACnC,KAAK,CAAI,UAAkB,UAA0B,CAAC,MACpD,cAAiB,SAAS,UAAU,EAAE,GAAG,SAAS,QAAQ,MAAM,CAAC;AAAA,EACnE,MAAM,CAAI,UAAkB,MAAgB,UAA0B,CAAC,MACrE,cAAiB,SAAS,UAAU,EAAE,GAAG,SAAS,QAAQ,QAAQ,MAAM,KAAK,UAAU,IAAI,EAAE,CAAC;AAAA,EAChG,KAAK,CAAI,UAAkB,MAAgB,UAA0B,CAAC,MACpE,cAAiB,SAAS,UAAU,EAAE,GAAG,SAAS,QAAQ,OAAO,MAAM,KAAK,UAAU,IAAI,EAAE,CAAC;AAAA,EAC/F,QAAQ,CAAI,UAAkB,UAA0B,CAAC,MACvD,cAAiB,SAAS,UAAU,EAAE,GAAG,SAAS,QAAQ,SAAS,CAAC;AACxE;AAEA,eAAe;",
       "names": []
     },
@@ -8066,9 +7802,7 @@
     "b": {},
     "inputSourceMap": {
       "version": 3,
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/hooks/useClients.ts"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/hooks/useClients.ts"],
       "mappings": "AAAA,OAAO,YAAY;AAMZ,aAAM,oBAAoB,MAAM;AACrC,QAAM,qBAAqB,GAAG,YAAY,IAAI,sBAAsB;AACpE,SAAO,OAAO,kBAAkB;AAClC;AAMO,aAAM,oBAAoB,MAAM;AACrC,QAAM,cAAc,GAAG,YAAY,IAAI,qBAAqB;AAC5D,SAAO,OAAO,WAAW;AAC3B;",
       "names": []
     },
@@ -8241,9 +7975,7 @@
     "b": {},
     "inputSourceMap": {
       "version": 3,
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/hooks/queries/useBooks/apiCalls.ts"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/hooks/queries/useBooks/apiCalls.ts"],
       "mappings": "AAAA,SAAS,yBAAyB;AAG3B,aAAM,mBAAmB,MAAM;AACpC,QAAM,SAAS,kBAAkB;AAMjC,QAAM,aAAa,OAAO;AAAA,IACxB;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF,MAAiB;AACf,WAAO,MAAM,OAAO,IAAmB,UAAU;AAAA,MAC/C,QAAQ;AAAA,QACN;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA;AAAA,QACA,MAAM,MAAM,SAAS;AAAA,QACrB,OAAO,OAAO,SAAS;AAAA,MACzB;AAAA,IACF,CAAC;AAAA,EACH;AAEA,QAAM,kBAAkB,OAAO,SAAiB;AAC9C,WAAO,MAAM,OAAO,IAAkB,eAAe,IAAI,EAAE;AAAA,EAC7D;AAEA,SAAO;AAAA,IACL;AAAA,IACA;AAAA,EACF;AACF;",
       "names": []
     },
@@ -8790,18 +8522,9 @@
       "7": 0
     },
     "b": {
-      "0": [
-        0,
-        0
-      ],
-      "1": [
-        0,
-        0
-      ],
-      "2": [
-        0,
-        0
-      ]
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -9082,9 +8805,7 @@
     "b": {},
     "inputSourceMap": {
       "version": 3,
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/hooks/queries/useBooks/index.ts"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/hooks/queries/useBooks/index.ts"],
       "mappings": "AAAA,SAAS,gBAAgB;AACzB,SAAS,iBAAiB;AAC1B,SAAS,wBAAwB;AAEjC,SAAS,0BAA0B;AAS5B,aAAM,gBAAgB,CAAC,gBAA2B;AACvD,QAAM,WAAW,UAAU,OAAO,WAAW;AAC7C,QAAM,EAAE,SAAS,IAAI,mBAAmB;AACxC,QAAM,EAAE,WAAW,IAAI,iBAAiB;AACxC,QAAM,QAAQ,SAAS;AAAA,IACrB;AAAA,IACA,SAAS,MAAM,WAAW,EAAE,MAAM,GAAG,GAAG,YAAY,CAAC,EAAE,KAAK,QAAQ;AAAA,EACtE,CAAC;AACD,SAAO,EAAE,GAAG,MAAM;AACpB;AAOO,aAAM,qBAAqB,CAAC,SAAiB;AAClD,QAAM,WAAW,UAAU,OAAO,IAAI;AACtC,QAAM,EAAE,QAAQ,IAAI,mBAAmB;AACvC,QAAM,EAAE,gBAAgB,IAAI,iBAAiB;AAC7C,QAAM,QAAQ,SAAS;AAAA,IACrB;AAAA,IACA,SAAS,MAAM,gBAAgB,IAAI,EAAE,KAAK,OAAO;AAAA,EACnD,CAAC;AACD,SAAO,EAAE,GAAG,MAAM;AACpB;",
       "names": []
     },
@@ -9894,46 +9615,16 @@
       "4": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        2,
-        2
-      ],
-      "5": [
-        2,
-        0
-      ],
-      "6": [
-        1,
-        0
-      ],
-      "7": [
-        1,
-        1
-      ],
-      "8": [
-        0,
-        0
-      ],
-      "9": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [2, 2],
+      "5": [2, 0],
+      "6": [1, 0],
+      "7": [1, 1],
+      "8": [0, 0],
+      "9": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -9950,9 +9641,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/pages/landing-page/LandingPage.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/pages/landing-page/LandingPage.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/pages/landing-page/LandingPage.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -10582,50 +10271,20 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
       "mappings": "AACS;AADT,2BAAwBA;AAAW;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AACjC,SAAO,uBAAC,SAAI,yBAAL;AAAA;AAAA;AAAA;AAAA,SAAc;AACvB;AAACC,KAFuBD;AAAQ,IAAAC;AAAAC,aAAAD,IAAA",
-      "names": [
-        "NotFound",
-        "_c",
-        "$RefreshReg$"
-      ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/pages/NotFound.tsx"
-      ],
+      "names": ["NotFound", "_c", "$RefreshReg$"],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/pages/NotFound.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/pages/NotFound.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -11255,50 +10914,20 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
       "mappings": "AAKM;AALN,2BAAoB;AAAsB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAE1C,wBAAwBA,kBAAkB;AACxC,SACE,uBAAC,SAAI,WAAU,0DACb;AAAA,2BAAC,eAAY,MAAM,IAAI,WAAU,UAAjC;AAAA;AAAA;AAAA;AAAA,WAAuC;AAAA,IACvC,uBAAC,UAAK,WAAU,+BAA8B,gCAA9C;AAAA;AAAA;AAAA;AAAA,WAA8D;AAAA,IAC9D,uBAAC,UAAK,WAAU,WAAU,gDAA1B;AAAA;AAAA;AAAA;AAAA,WAA0D;AAAA,OAH5D;AAAA;AAAA;AAAA;AAAA,SAIA;AAEJ;AAACC,KARuBD;AAAe,IAAAC;AAAAC,aAAAD,IAAA",
-      "names": [
-        "SearchNoResults",
-        "_c",
-        "$RefreshReg$"
-      ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/pages/search/SearchNoResults.tsx"
-      ],
+      "names": ["SearchNoResults", "_c", "$RefreshReg$"],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/pages/search/SearchNoResults.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/pages/search/SearchNoResults.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -12361,54 +11990,18 @@
       "8": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        1,
-        0
-      ],
-      "9": [
-        1,
-        1
-      ],
-      "10": [
-        0,
-        0
-      ],
-      "11": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [0, 0],
+      "7": [0, 0],
+      "8": [1, 0],
+      "9": [1, 1],
+      "10": [0, 0],
+      "11": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -13287,42 +12880,15 @@
       "6": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        1,
-        0
-      ],
-      "6": [
-        1,
-        1
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [1, 0],
+      "6": [1, 1],
+      "7": [0, 0],
+      "8": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -14058,38 +13624,14 @@
       "4": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -14737,50 +14279,20 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
       "mappings": "AAKM;AALN,2BAAyB;AAAQ,MAAc;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAE/C,wBAAwBA,iBAAiB;AACvC,SACE,uBAAC,SAAI,WAAU,8DACb,iCAAC,oBAAiB,MAAM,MAAxB;AAAA;AAAA;AAAA;AAAA,SAA2B,KAD7B;AAAA;AAAA;AAAA;AAAA,SAEA;AAEJ;AAACC,KANuBD;AAAc,IAAAC;AAAAC,aAAAD,IAAA",
-      "names": [
-        "LoadingSpinner",
-        "_c",
-        "$RefreshReg$"
-      ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/LoadingSpinner.tsx"
-      ],
+      "names": ["LoadingSpinner", "_c", "$RefreshReg$"],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/LoadingSpinner.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/LoadingSpinner.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -15813,58 +15325,19 @@
       "6": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        0,
-        0
-      ],
-      "9": [
-        1,
-        0
-      ],
-      "10": [
-        1,
-        1
-      ],
-      "11": [
-        0,
-        0
-      ],
-      "12": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [0, 0],
+      "7": [0, 0],
+      "8": [0, 0],
+      "9": [1, 0],
+      "10": [1, 1],
+      "11": [0, 0],
+      "12": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -15900,9 +15373,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/pages/search/Search.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/pages/search/Search.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/pages/search/Search.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -16830,46 +16301,16 @@
       "7": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        1,
-        0
-      ],
-      "7": [
-        1,
-        1
-      ],
-      "8": [
-        0,
-        0
-      ],
-      "9": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [1, 0],
+      "7": [1, 1],
+      "8": [0, 0],
+      "9": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -16894,9 +16335,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/ClipboardButton.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/ClipboardButton.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/ClipboardButton.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -17736,46 +17175,16 @@
       "5": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        1,
-        0
-      ],
-      "7": [
-        1,
-        1
-      ],
-      "8": [
-        0,
-        0
-      ],
-      "9": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [1, 0],
+      "7": [1, 1],
+      "8": [0, 0],
+      "9": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -17800,9 +17209,7 @@
         "_c2",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/PasswordInput.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/PasswordInput.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/PasswordInput.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -18757,50 +18164,17 @@
       "6": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        1,
-        0
-      ],
-      "8": [
-        1,
-        1
-      ],
-      "9": [
-        0,
-        0
-      ],
-      "10": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [0, 0],
+      "7": [1, 0],
+      "8": [1, 1],
+      "9": [0, 0],
+      "10": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -18828,9 +18202,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/pages/Admin.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/pages/Admin.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/pages/Admin.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -19816,46 +19188,16 @@
       "8": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        1,
-        0
-      ],
-      "7": [
-        1,
-        1
-      ],
-      "8": [
-        0,
-        0
-      ],
-      "9": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [1, 0],
+      "7": [1, 1],
+      "8": [0, 0],
+      "9": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -20662,42 +20004,15 @@
       "4": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        1,
-        0
-      ],
-      "6": [
-        1,
-        1
-      ],
-      "7": [
-        0,
-        0
-      ],
-      "8": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [1, 0],
+      "6": [1, 1],
+      "7": [0, 0],
+      "8": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -20717,9 +20032,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/components/Rating/Stars.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/components/Rating/Stars.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/components/Rating/Stars.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -21349,38 +20662,14 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -22416,50 +21705,17 @@
       "6": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        0,
-        0
-      ],
-      "5": [
-        0,
-        0
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        1,
-        0
-      ],
-      "8": [
-        1,
-        1
-      ],
-      "9": [
-        0,
-        0
-      ],
-      "10": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [0, 0],
+      "5": [0, 0],
+      "6": [0, 0],
+      "7": [1, 0],
+      "8": [1, 1],
+      "9": [0, 0],
+      "10": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -23113,38 +22369,14 @@
       "3": 0
     },
     "b": {
-      "0": [
-        1,
-        0
-      ],
-      "1": [
-        1,
-        0
-      ],
-      "2": [
-        1,
-        1
-      ],
-      "3": [
-        0,
-        1
-      ],
-      "4": [
-        1,
-        0
-      ],
-      "5": [
-        1,
-        1
-      ],
-      "6": [
-        0,
-        0
-      ],
-      "7": [
-        0,
-        0
-      ]
+      "0": [1, 0],
+      "1": [1, 0],
+      "2": [1, 1],
+      "3": [0, 1],
+      "4": [1, 0],
+      "5": [1, 1],
+      "6": [0, 0],
+      "7": [0, 0]
     },
     "inputSourceMap": {
       "version": 3,
@@ -23160,9 +22392,7 @@
         "_c",
         "$RefreshReg$"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/App.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/App.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/App.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
@@ -23228,9 +22458,7 @@
         "audience",
         "VITE_AUTH0_AUDIENCE"
       ],
-      "sources": [
-        "/Users/user/Desktop/repos/puc/mikbooks/src/main.tsx"
-      ],
+      "sources": ["/Users/user/Desktop/repos/puc/mikbooks/src/main.tsx"],
       "file": "/Users/user/Desktop/repos/puc/mikbooks/src/main.tsx"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
