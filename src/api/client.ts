@@ -34,7 +34,6 @@ const createRequest = async <T>(
   }
 
   try {
-    console.log('baseUrl', baseUrl + endpoint)
     const response = await fetch(`${baseUrl}${endpoint}`, config)
 
     if (!response.ok) {
