@@ -8,7 +8,7 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col m-2 my-4 gap-6">
       <LandingPageSection sectionTitle="Recently added" books={books} />
-      <LandingPageSection sectionTitle="Most viewed" books={books} />
+      <LandingPageSection sectionTitle="Most popular" books={books} />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import FavoriteChip from '@/components/FavoriteChip'
 import BookImage from '@/components/BookImage'
 import { type Book } from '@/hooks/queries/useBooks'
 import { Plus } from 'lucide-react'
+import Stars from '../Rating/Stars'
 
 export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo: Book }) {
   return (
@@ -15,6 +16,10 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
           <Button radius="full" color="primary" variant="light">
             <Plus /> Add to favorites
           </Button>
+        </div>
+        <div className="flex flex-row gap-2">
+          <Stars rating={0} />
+          <span>0 / 5</span>
         </div>
         <p className="text-sm">
           <span className="font-bold">ISBN</span> {isbn}

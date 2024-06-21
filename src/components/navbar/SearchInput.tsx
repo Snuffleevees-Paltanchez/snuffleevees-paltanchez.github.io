@@ -1,6 +1,7 @@
 import { SearchIcon } from 'lucide-react'
 import { Input } from '@nextui-org/react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useQueryParams } from '@/hooks/useQueryParams'
 
 // TODO: add it to a utils file and fix the types
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,8 +20,14 @@ const debounce = (func: any, wait: number) => {
 
 export default function SearchInput() {
   const navigate = useNavigate()
+  const location = useLocation()
+  const { addParam } = useQueryParams()
   const handleSearch = debounce((value: string) => {
-    navigate(`/search?q=${value}`)
+    if (location.pathname !== '/search') {
+      navigate(`/search?title=${value}`)
+    } else {
+      addParam('title', value)
+    }
   }, 500)
   return (
     <Input

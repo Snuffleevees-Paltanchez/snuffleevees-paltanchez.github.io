@@ -8,14 +8,12 @@ import {
   getKeyValue,
 } from '@nextui-org/react'
 import React from 'react'
-import Stars from '../Rating/Stars'
 import { Price } from '@/hooks/queries/useBooks'
 
 export default function PriceTable({ prices }: { prices: Price[] }) {
   const columns = [
     { key: 'productUrl', label: 'Website' },
     { key: 'price', label: 'Price' },
-    { key: 'rating', label: 'Rating' },
   ]
 
   const classNames = React.useMemo(
@@ -37,13 +35,6 @@ export default function PriceTable({ prices }: { prices: Price[] }) {
               const value = getKeyValue(item, columnKey) || ''
               if (columnKey === 'price') {
                 return <TableCell className="font-semibold">${value}</TableCell>
-              } else if (columnKey === 'rating') {
-                return (
-                  <TableCell className="flex flex-row gap-2">
-                    <Stars rating={value} />
-                    {value} / 5
-                  </TableCell>
-                )
               }
               return (
                 <TableCell>

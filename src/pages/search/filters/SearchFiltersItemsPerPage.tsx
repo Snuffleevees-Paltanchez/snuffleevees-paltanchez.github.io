@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
+import { useQueryParams } from '@/hooks/useQueryParams'
 
-export default function SearchFiltersItemsByPage({
-  onChange,
-}: {
-  onChange?: (itemsPerPage: number) => void
-}) {
-  const [itemsPerPage, setItemsPerPage] = useState(10)
-  const handleChange = (itemsPerPage: number) => {
+export default function SearchFiltersItemsByPage() {
+  const { queryObject, addParam } = useQueryParams()
+  const [itemsPerPage, setItemsPerPage] = useState(queryObject.limit || '20')
+  const handleChange = (itemsPerPage: string) => {
+    addParam('limit', itemsPerPage)
     setItemsPerPage(itemsPerPage)
-    onChange?.(itemsPerPage)
   }
+
   return (
     <div className="flex flex-row gap-2 items-center">
       <Select
@@ -18,10 +17,10 @@ export default function SearchFiltersItemsByPage({
         label="Items per page"
         size="sm"
         value={itemsPerPage}
-        onChange={(e) => handleChange(parseInt(e.target.value))}
+        onChange={(e) => handleChange(e.target.value)}
       >
-        <SelectItem key="10">10</SelectItem>
         <SelectItem key="20">20</SelectItem>
+        <SelectItem key="30">30</SelectItem>
         <SelectItem key="50">50</SelectItem>
       </Select>
     </div>
