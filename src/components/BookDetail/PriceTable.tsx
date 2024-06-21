@@ -8,22 +8,12 @@ import {
   getKeyValue,
 } from '@nextui-org/react'
 import React from 'react'
-import Stars from '../Rating/Stars'
+import { Price } from '@/hooks/queries/useBooks'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function PriceTable({ isbn }: { isbn: string | undefined }) {
-  // The isbn should be used to fetch the prices from the API
+export default function PriceTable({ prices }: { prices: Price[] }) {
   const columns = [
-    { key: 'website', label: 'Website' },
+    { key: 'productUrl', label: 'Website' },
     { key: 'price', label: 'Price' },
-    { key: 'rating', label: 'Rating' },
-  ]
-
-  const rows = [
-    { key: '1', website: 'Buscalibre', price: 12000, rating: 4.0 },
-    { key: '2', website: 'Antártica', price: 9000, rating: 4.7 },
-    { key: '3', website: 'Contrapunto', price: 9500, rating: 3 },
-    { key: '4', website: 'Feria chilena del libro', price: 10500, rating: 4.3 },
   ]
 
   const classNames = React.useMemo(
@@ -38,26 +28,30 @@ export default function PriceTable({ isbn }: { isbn: string | undefined }) {
       <TableHeader columns={columns}>
         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
-      <TableBody items={rows}>
+      <TableBody items={prices}>
         {(item) => (
-          <TableRow key={item.key}>
+          <TableRow key={item.platformId}>
             {(columnKey) => {
-              const value = getKeyValue(item, columnKey)
+              const value = getKeyValue(item, columnKey) || ''
               if (columnKey === 'price') {
                 return <TableCell className="font-semibold">${value}</TableCell>
-              } else if (columnKey === 'rating') {
-                return (
-                  <TableCell className="flex flex-row gap-2">
-                    <Stars rating={value} />
-                    {value} / 5
-                  </TableCell>
-                )
               }
-              return <TableCell>{value}</TableCell>
+              return (
+                <TableCell>
+                  <a href={value} target="_blank" rel="noreferrer" className="text-secondary">
+                    {parseWebsite(value)}
+                  </a>
+                </TableCell>
+              )
             }}
           </TableRow>
         )}
       </TableBody>
     </Table>
   )
+}
+
+const parseWebsite = (url: string) => {
+  const parsedUrl = new URL(url)
+  return parsedUrl.hostname
 }

@@ -1,6 +1,18 @@
 interface RequestOptions extends RequestInit {
   headers?: HeadersInit
   body?: BodyInit
+  params?: Record<string, string | undefined>
+}
+
+const getQueryParamsString = (params: RequestOptions['params']) => {
+  const filteredParams = Object.fromEntries(
+    Object.entries(params ?? {}).filter(([, value]) => value !== undefined),
+  ) as Record<string, string>
+  const searchParams = new URLSearchParams(filteredParams)
+  if (searchParams.size) {
+    return `?${searchParams.toString()}`
+  }
+  return ''
 }
 
 const createRequest = async <T>(
@@ -16,6 +28,10 @@ const createRequest = async <T>(
   }
 
   const config: RequestOptions = { ...defaultOptions, ...options }
+
+  if (config.params) {
+    endpoint += getQueryParamsString(config.params)
+  }
 
   try {
     const response = await fetch(`${baseUrl}${endpoint}`, config)

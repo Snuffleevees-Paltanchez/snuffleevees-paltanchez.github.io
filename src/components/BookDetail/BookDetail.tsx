@@ -2,19 +2,24 @@ import { Button } from '@nextui-org/react'
 import PriceTable from '@/components/BookDetail/PriceTable'
 import FavoriteChip from '@/components/FavoriteChip'
 import BookImage from '@/components/BookImage'
-import { type BookInfo } from '@/hooks/queries/useBookInfo'
+import { type Book } from '@/hooks/queries/useBooks'
 import { Plus } from 'lucide-react'
+import Stars from '../Rating/Stars'
 
-export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo: BookInfo }) {
+export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo: Book }) {
   return (
     <div className="flex flex-row h-full w-full m-10 gap-6">
       <div className="flex flex-col gap-4">
-        <BookImage image={bookInfo.image} title={bookInfo.title} />
+        <BookImage image={bookInfo.imgUrl} title={bookInfo.title} customClasses="h-[300px]" />
         <div className="flex flex-row gap-1 items-center">
           <FavoriteChip customClasses="text-base" markedAsFavoriteCount={0} />
           <Button radius="full" color="primary" variant="light">
             <Plus /> Add to favorites
           </Button>
+        </div>
+        <div className="flex flex-row gap-2">
+          <Stars rating={0} />
+          <span>0 / 5</span>
         </div>
         <p className="text-sm">
           <span className="font-bold">ISBN</span> {isbn}
@@ -22,11 +27,10 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
       </div>
       <div className="flex flex-col items-start">
         <h1 className="text-3xl font-semibold">{bookInfo.title}</h1>
-        <span className="font-medium italic text-sm">{bookInfo.publishedDate}</span>
-        <span className="text-lg">{bookInfo?.authors.join(', ')}</span>
-        <p className="mt-3 font-semibold">Description</p>
+        <span className="my-1 font-medium italic text-sm">{bookInfo.publicationDate}</span>
+        <span className="text-lg">{bookInfo.author?.name}</span>
         <p className="mb-6">{bookInfo.description}</p>
-        <PriceTable isbn={isbn} />
+        <PriceTable prices={bookInfo.prices} />
       </div>
     </div>
   )

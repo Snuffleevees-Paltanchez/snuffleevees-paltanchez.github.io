@@ -1,22 +1,28 @@
 import { useState } from 'react'
 import { Input } from '@nextui-org/react'
+import { useQueryParams } from '@/hooks/useQueryParams'
 
 type PriceRanges = {
-  minPrice: number
-  maxPrice: number
+  minPrice: string
+  maxPrice: string
 }
 
-export default function SearchFiltersPriceRange({
-  onChange,
-}: {
-  onChange?: (priceRanges: PriceRanges) => void
-}) {
-  const [priceRanges, setPriceRanges] = useState({ minPrice: 0, maxPrice: 0 })
+export default function SearchFiltersPriceRange() {
+  const { queryObject, addParam } = useQueryParams()
+  const [priceRanges, setPriceRanges] = useState({
+    minPrice: queryObject.minPrice || '0',
+    maxPrice: queryObject.maxPrice || '0',
+  })
 
   const handlePriceRangeChange = (priceRanges: Partial<PriceRanges>) => {
+    if (priceRanges.minPrice) {
+      addParam('minPrice', priceRanges.minPrice)
+    }
+    if (priceRanges.maxPrice) {
+      addParam('maxPrice', priceRanges.maxPrice)
+    }
     setPriceRanges((prev: PriceRanges) => {
       const newPriceRanges = { ...prev, ...priceRanges }
-      onChange?.(newPriceRanges)
       return newPriceRanges
     })
   }
@@ -30,9 +36,9 @@ export default function SearchFiltersPriceRange({
           className="w-20"
           size="sm"
           type="number"
-          value={priceRanges.minPrice.toString()}
+          value={priceRanges.minPrice}
           onChange={(e) => {
-            handlePriceRangeChange({ minPrice: parseInt(e.target.value) })
+            handlePriceRangeChange({ minPrice: e.target.value })
           }}
         />
         <Input
@@ -41,9 +47,9 @@ export default function SearchFiltersPriceRange({
           className="w-20"
           size="sm"
           type="number"
-          value={priceRanges.maxPrice.toString()}
+          value={priceRanges.maxPrice}
           onChange={(e) => {
-            handlePriceRangeChange({ maxPrice: parseInt(e.target.value) })
+            handlePriceRangeChange({ maxPrice: e.target.value })
           }}
         />
       </div>
