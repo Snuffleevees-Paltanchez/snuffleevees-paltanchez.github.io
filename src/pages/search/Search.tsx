@@ -8,20 +8,18 @@ import SearchFilters from './filters/SearchFilters'
 import LoadingSpinner from '@/components/LoadingSpinner'
 
 export default function Search() {
-  const { queryObject } = useQueryParams()
-  const [currentPage, setCurrentPage] = useState(1)
+  const { queryObject, addParam } = useQueryParams()
+  const [currentPage, setCurrentPage] = useState(queryObject.page ? parseInt(queryObject.page) : 1)
   const booksQuery = useBooksQuery(queryObject)
 
-  const totalPages = booksQuery.data?.pages[0].totalPages || 1
+  const totalPages = booksQuery.data?.totalPages || 1
 
   const onChangeOfPage = (page: number) => {
-    if (page < currentPage) {
-      setCurrentPage(page)
-      booksQuery.fetchPreviousPage()
-    } else {
-      setCurrentPage(page)
-      booksQuery.fetchNextPage()
-    }
+    addParam('page', page.toString())
+    setCurrentPage(page)
+  }
+  if (booksQuery.isLoading) {
+    return <LoadingSpinner />
   }
 
   return (
@@ -31,13 +29,11 @@ export default function Search() {
         <LoadingSpinner />
       ) : (
         <div>
-          {!booksQuery.data?.pages.length ? (
+          {!booksQuery.data?.data.length ? (
             <SearchNoResults />
           ) : (
             <div className="flex flex-row flex-wrap my-2 gap-6 justify-center">
-              {booksQuery.data?.pages[currentPage - 1]?.data.map((book, i) => (
-                <BookCard key={i} book={book} />
-              ))}
+              {booksQuery.data?.data.map((book, i) => <BookCard key={i} book={book} />)}
             </div>
           )}
         </div>
@@ -46,6 +42,7 @@ export default function Search() {
       <Pagination
         className="my-4"
         showControls
+        page={currentPage}
         total={totalPages}
         onChange={onChangeOfPage}
         isDisabled={totalPages < 2}

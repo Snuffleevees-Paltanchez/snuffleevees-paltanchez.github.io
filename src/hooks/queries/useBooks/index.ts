@@ -1,4 +1,4 @@
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query'
 import { queryKeys } from './queryKeys'
 import { useBooksRequests } from './apiCalls'
 import { BookQuery } from './types'
@@ -11,15 +11,13 @@ export type { Book, BookQuery, Price } from './types'
  * @param queryParams The query parameters
  * @returns The books
  */
-export const useBooksQuery = (queryParams: Omit<BookQuery, 'page' | 'limit'>) => {
+export const useBooksQuery = (queryParams: BookQuery) => {
   const queryKey = queryKeys.search(queryParams)
   const { mapBooks } = useBooksTransforms()
   const { booksQuery } = useBooksRequests()
-  const query = useInfiniteQuery({
+  const query = useQuery({
     queryKey,
-    initialPageParam: 1,
-    queryFn: ({ pageParam }) => booksQuery({ ...queryParams, page: pageParam }).then(mapBooks),
-    getNextPageParam: (lastPage) => lastPage.page + 1,
+    queryFn: () => booksQuery({ page: 1, ...queryParams }).then(mapBooks),
   })
   return { ...query }
 }
