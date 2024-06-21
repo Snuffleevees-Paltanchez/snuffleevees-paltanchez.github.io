@@ -17,7 +17,7 @@ export const useBooksQuery = (queryParams: BookQuery) => {
   const { booksQuery } = useBooksRequests()
   const query = useQuery({
     queryKey,
-    queryFn: () => booksQuery({ page: 1, ...queryParams }).then(mapBooks)
+    queryFn: () => booksQuery({ page: 1, ...queryParams }).then(mapBooks),
   })
   return { ...query }
 }

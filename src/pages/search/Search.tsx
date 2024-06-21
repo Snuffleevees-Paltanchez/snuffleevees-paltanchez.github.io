@@ -18,7 +18,9 @@ export default function Search() {
     addParam('page', page.toString())
     setCurrentPage(page)
   }
-  if (booksQuery.isLoading) { return <LoadingSpinner /> }
+  if (booksQuery.isLoading) {
+    return <LoadingSpinner />
+  }
 
   return (
     <div className="flex flex-col p-4 px-6 items-center w-full">
@@ -31,9 +33,7 @@ export default function Search() {
             <SearchNoResults />
           ) : (
             <div className="flex flex-row flex-wrap my-2 gap-6 justify-center">
-              {booksQuery.data?.data.map((book, i) => (
-                <BookCard key={i} book={book} />
-              ))}
+              {booksQuery.data?.data.map((book, i) => <BookCard key={i} book={book} />)}
             </div>
           )}
         </div>

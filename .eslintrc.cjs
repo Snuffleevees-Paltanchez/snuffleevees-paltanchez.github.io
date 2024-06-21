@@ -25,6 +25,6 @@ module.exports = {
     ],
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
-    "no-console": "error",
+    'no-console': 'error',
   },
 }
