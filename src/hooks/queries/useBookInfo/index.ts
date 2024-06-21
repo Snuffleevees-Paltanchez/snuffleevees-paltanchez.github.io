@@ -9,6 +9,7 @@ export type { BookInfo } from './types'
  * Hook to get the book info given an ISBN
  * @param isbn The ISBN of the book. It is an identifier for books.
  * @returns The book info
+ * @deprecated Use useBooksQuery or useBooksByISBNQuery instead
  */
 export const useBookInfoQuery = (isbn: string) => {
   const { mapBookInfo } = useBookInfoTransforms()

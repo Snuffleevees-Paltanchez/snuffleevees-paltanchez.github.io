@@ -1,12 +1,5 @@
 import { useMikbooksClient } from '@/hooks/useClients'
-import type { BookQuery, Book } from './types'
-
-type BooksResponse = {
-  total: number
-  page: number
-  limit: number
-  data: Book[]
-}
+import type { BookQuery, BooksResponse, BookResponse } from './types'
 
 export const useBooksRequests = () => {
   const client = useMikbooksClient()
@@ -23,6 +16,8 @@ export const useBooksRequests = () => {
     category,
     minPrice,
     maxPrice,
+    page,
+    limit,
   }: BookQuery) => {
     return await client.get<BooksResponse>('/books', {
       params: {
@@ -33,12 +28,14 @@ export const useBooksRequests = () => {
         category,
         minPrice,
         maxPrice,
+        page: page?.toString(),
+        limit: limit?.toString(),
       },
     })
   }
 
   const bookByISBNQuery = async (isbn: string) => {
-    return await client.get<Book>(`/books/isbn/${isbn}`)
+    return await client.get<BookResponse>(`/books/isbn/${isbn}`)
   }
 
   return {

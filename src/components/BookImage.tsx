@@ -1,7 +1,7 @@
 import { Image, ImageProps } from '@nextui-org/react'
 import noImage from '/no-image.png'
 interface BookImageProps extends ImageProps {
-  image?: string
+  image?: string | null
   title?: string
   customClasses?: string
 }
@@ -14,7 +14,7 @@ export default function BookImage({
 }: BookImageProps) {
   return (
     <Image
-      src={image || noImage}
+      src={image ?? noImage}
       alt={title}
       fallbackSrc={noImage}
       radius="none"

@@ -2,8 +2,9 @@ import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
 import { queryKeys } from './queryKeys'
 import { useBooksRequests } from './apiCalls'
 import { BookQuery } from './types'
+import { useBooksTransforms } from './dataTransforms'
 
-export type { Book, BookQuery } from './types'
+export type { Book, BookQuery, Price } from './types'
 
 /**
  * Hook to get the books given a query
@@ -12,12 +13,13 @@ export type { Book, BookQuery } from './types'
  */
 export const useBooksQuery = (queryParams: Omit<BookQuery, 'page' | 'limit'>) => {
   const queryKey = queryKeys.search(queryParams)
+  const { mapBooks } = useBooksTransforms()
   const { booksQuery } = useBooksRequests()
   const query = useInfiniteQuery({
     queryKey,
     initialPageParam: 1,
-    queryFn: ({ pageParam }) => booksQuery({ ...queryParams, page: pageParam }),
-    getNextPageParam: (lastPage, pages) => (lastPage.data.length ? pages.length + 1 : undefined),
+    queryFn: ({ pageParam }) => booksQuery({ ...queryParams, page: pageParam }).then(mapBooks),
+    getNextPageParam: (lastPage) => lastPage.page + 1,
   })
   return { ...query }
 }
@@ -29,10 +31,11 @@ export const useBooksQuery = (queryParams: Omit<BookQuery, 'page' | 'limit'>) =>
  */
 export const useBookByISBNQuery = (isbn: string) => {
   const queryKey = queryKeys.byISBN(isbn)
+  const { mapBook } = useBooksTransforms()
   const { bookByISBNQuery } = useBooksRequests()
   const query = useQuery({
     queryKey,
-    queryFn: () => bookByISBNQuery(isbn),
+    queryFn: () => bookByISBNQuery(isbn).then(mapBook),
   })
   return { ...query }
 }

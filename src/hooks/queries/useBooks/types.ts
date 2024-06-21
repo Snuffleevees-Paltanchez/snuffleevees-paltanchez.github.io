@@ -1,4 +1,4 @@
-interface Author {
+export interface Author {
   id: number
   name: string
   createdAt: string
@@ -6,7 +6,7 @@ interface Author {
   isDeleted: boolean
 }
 
-interface Price {
+export interface PriceResponse {
   id: number
   bookId: number
   platformId: number
@@ -18,7 +18,7 @@ interface Price {
   isDeleted: boolean
 }
 
-export interface Book {
+export interface BookResponse {
   id: number
   title: string
   authorId: number
@@ -31,6 +31,22 @@ export interface Book {
   isDeleted: boolean
   categories: string[]
   author: Author
+  prices: PriceResponse[]
+}
+
+export interface BooksResponse {
+  total: number
+  page: number
+  limit: number
+  data: BookResponse[]
+}
+
+export interface Price extends Omit<PriceResponse, 'price'> {
+  price: string
+}
+
+export interface Book extends Omit<BookResponse, 'prices'> {
+  bestPrice: string
   prices: Price[]
 }
 

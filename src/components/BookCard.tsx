@@ -1,47 +1,44 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { Card, CardHeader, CardBody } from '@nextui-org/card'
 import { Skeleton } from '@nextui-org/react'
-import { useBookInfoQuery, type BookInfo } from '@/hooks/queries/useBookInfo'
+import type { Book } from '@/hooks/queries/useBooks'
 import FavoriteChip from './FavoriteChip'
 import BookImage from './BookImage'
 
 export default function BookCard({
-  isbn,
-  price,
+  book,
+  isLoading = false,
   markedAsFavoriteCount = 0,
 }: {
-  isbn: string
-  /** Price in CLP */
-  price: number
+  book: Book
+  isLoading?: boolean
   markedAsFavoriteCount?: number
 }) {
   const navigate = useNavigate()
-  const bookInfoQuery = useBookInfoQuery(isbn)
-  const bookInfo = bookInfoQuery.data || ({} as BookInfo)
-  if (bookInfoQuery.isLoading) return <SkeletonCard />
+  if (isLoading) return <SkeletonCard />
   return (
-    <Card className="min-w-[400px] max-w-[400px] flex flex-row justify-center">
+    <Card className="min-w-[400px] max-w-[400px] flex flex-row justify-between">
       <div
-        className="relative min-w-[150px] cursor-pointer"
-        onClick={() => navigate(`/books/${isbn}`)}
+        className="relative min-w-[150px] max-w-[150px] cursor-pointer"
+        onClick={() => navigate(`/books/${book.isbn}`)}
       >
-        <BookImage image={bookInfo.image} title={bookInfo.title} customClasses="h-full" />
+        <BookImage image={book.imgUrl} title={book.title} customClasses="h-full" />
         <FavoriteChip
           customClasses="absolute bottom-3 mx-2"
           markedAsFavoriteCount={markedAsFavoriteCount}
         />
       </div>
-      <div>
+      <div className="w-full">
         <CardHeader className="flex-col items-start">
-          <Link to={`books/${isbn}`}>
-            <h4 className="font-medium text-large">{bookInfo.title}</h4>
+          <Link to={`/books/${book.isbn}`}>
+            <h4 className="font-medium text-large">{book.title}</h4>
           </Link>
-          <span className="font-medium italic">{bookInfo.publishedDate}</span>
-          <span className="italic">{bookInfo.authors.join(', ')}</span>
+          <span className="font-medium italic">{book.publicationDate}</span>
+          <span className="italic">{book.author.name}</span>
         </CardHeader>
         <CardBody className="pt-2">
-          <span className="text-sm">{bookInfo.description}</span>
-          <span className="text-end text-secondary font-semibold text-xl">${price}</span>
+          <span className="text-sm line-clamp-6">{book.description}</span>
+          <span className="text-end text-secondary font-semibold text-xl">${book.bestPrice}</span>
         </CardBody>
       </div>
     </Card>
