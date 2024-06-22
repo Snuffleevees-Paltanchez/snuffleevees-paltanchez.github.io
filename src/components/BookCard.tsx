@@ -4,13 +4,7 @@ import { Skeleton } from '@nextui-org/react'
 import type { Book } from '@/hooks/queries/useBooks'
 import BookImage from './BookImage'
 
-export default function BookCard({
-  book,
-  isLoading = false,
-}: {
-  book: Book
-  isLoading?: boolean
-}) {
+export default function BookCard({ book, isLoading = false }: { book: Book; isLoading?: boolean }) {
   const navigate = useNavigate()
   if (isLoading) return <SkeletonCard />
   return (

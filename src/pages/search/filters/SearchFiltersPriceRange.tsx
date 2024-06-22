@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Input } from '@nextui-org/react'
 import { useQueryParams } from '@/hooks/useQueryParams'
-import FiltersMenu from '@/components/filters-menu/FiltersMenu'
+import FiltersMenu from '@/components/FiltersMenu'
 
 type PriceRanges = {
   minPrice: string

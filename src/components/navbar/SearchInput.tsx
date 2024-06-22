@@ -10,7 +10,6 @@ export default function SearchInput() {
   const { updateParams, queryObject } = useQueryParams()
   const [searchText, setSearchText] = useState(queryObject.title || '')
   const handleSearch = (value: string) => {
-    console.log('searching for:', value)
     if (location.pathname !== '/search') {
       navigate(`/search?title=${value}`)
     } else {
