@@ -27,3 +27,4 @@ dist-ssr
 
 instrumented
 coverage
+.nyc_output
