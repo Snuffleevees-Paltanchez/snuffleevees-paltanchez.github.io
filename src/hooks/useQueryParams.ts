@@ -7,8 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
  * @returns an object with:
  * - query: The URLSearchParams object
  * - queryObject: The URLSearchParams object as a plain object
- * - addParam: A function to add a parameter to the URL
- * - removeParam: A function to remove a parameter from the URL
+ * - updateParams: A function to update the query parameters
  */
 export const useQueryParams = () => {
   const navigate = useNavigate()
@@ -16,22 +15,28 @@ export const useQueryParams = () => {
   const query = useMemo(() => new URLSearchParams(search), [search])
   const queryObject = useMemo(() => Object.fromEntries(query), [query])
 
-  const addParam = (key: string, value: string) => {
+  const updateParams = ({
+    paramsToAppend = {},
+    paramsToRemove = [],
+  }: {
+    paramsToAppend?: Record<string, string | undefined>
+    paramsToRemove?: string[]
+  }) => {
     const newQuery = new URLSearchParams(query)
-    newQuery.set(key, value)
-    navigate(`${pathname}?${newQuery.toString()}`)
-  }
-
-  const removeParam = (key: string) => {
-    const newQuery = new URLSearchParams(query)
-    newQuery.delete(key)
+    Object.entries(paramsToAppend).forEach(([key, value]) => {
+      if (value) {
+        newQuery.set(key, value)
+      }
+    })
+    paramsToRemove.forEach((key) => {
+      newQuery.delete(key)
+    })
     navigate(`${pathname}?${newQuery.toString()}`)
   }
 
   return {
     query,
     queryObject,
-    addParam,
-    removeParam,
+    updateParams,
   }
 }

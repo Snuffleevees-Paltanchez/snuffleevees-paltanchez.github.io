@@ -1,46 +1,46 @@
+import { useState } from 'react'
 import { SearchIcon } from 'lucide-react'
-import { Input } from '@nextui-org/react'
+import { Input, Button } from '@nextui-org/react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useQueryParams } from '@/hooks/useQueryParams'
-
-// TODO: add it to a utils file and fix the types
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const debounce = (func: any, wait: number) => {
-  let timeout: NodeJS.Timeout
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return function executedFunction(...args: any) {
-    const later = () => {
-      clearTimeout(timeout)
-      func(...args)
-    }
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-  }
-}
 
 export default function SearchInput() {
   const navigate = useNavigate()
   const location = useLocation()
-  const { addParam } = useQueryParams()
-  const handleSearch = debounce((value: string) => {
+  const { updateParams, queryObject } = useQueryParams()
+  const [searchText, setSearchText] = useState(queryObject.title || '')
+  const handleSearch = (value: string) => {
     if (location.pathname !== '/search') {
       navigate(`/search?title=${value}`)
     } else {
-      addParam('title', value)
+      updateParams({ paramsToAppend: { title: value }, paramsToRemove: ['page'] })
     }
-  }, 500)
+  }
   return (
-    <Input
-      classNames={{
-        base: 'max-w-full h-10 w-full',
-        mainWrapper: 'h-full',
-        inputWrapper: 'h-full font-normal text-default-500 text-secondary',
-      }}
-      placeholder="Type to search..."
-      size="sm"
-      startContent={<SearchIcon size={18} />}
-      onChange={(e) => handleSearch(e.target.value)}
-      type="search"
-    />
+    <div className="flex items-center">
+      <Input
+        classNames={{
+          base: 'max-w-full h-10 w-full',
+          mainWrapper: 'h-full',
+          inputWrapper: 'h-full font-normal text-default-500 text-secondary rounded-r-none',
+        }}
+        placeholder="Type to search..."
+        size="sm"
+        value={searchText}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') handleSearch(searchText)
+        }}
+        onChange={(e) => setSearchText(e.target.value)}
+        type="search"
+      />
+      <Button
+        className="h-10 rounded-l-none"
+        size="sm"
+        onClick={() => handleSearch(searchText)}
+        isIconOnly
+      >
+        <SearchIcon size={18} />
+      </Button>
+    </div>
   )
 }

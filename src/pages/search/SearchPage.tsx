@@ -7,19 +7,16 @@ import SearchNoResults from './SearchNoResults'
 import SearchFilters from './filters/SearchFilters'
 import LoadingSpinner from '@/components/LoadingSpinner'
 
-export default function Search() {
-  const { queryObject, addParam } = useQueryParams()
+export default function SearchPage() {
+  const { queryObject, updateParams } = useQueryParams()
   const [currentPage, setCurrentPage] = useState(queryObject.page ? parseInt(queryObject.page) : 1)
   const booksQuery = useBooksQuery(queryObject)
 
   const totalPages = booksQuery.data?.totalPages || 1
 
   const onChangeOfPage = (page: number) => {
-    addParam('page', page.toString())
+    updateParams({ paramsToAppend: { page: page.toString() } })
     setCurrentPage(page)
-  }
-  if (booksQuery.isLoading) {
-    return <LoadingSpinner />
   }
 
   return (

@@ -3,10 +3,10 @@ import { Select, SelectItem } from '@nextui-org/select'
 import { useQueryParams } from '@/hooks/useQueryParams'
 
 export default function SearchFiltersItemsByPage() {
-  const { queryObject, addParam } = useQueryParams()
+  const { queryObject, updateParams } = useQueryParams()
   const [itemsPerPage, setItemsPerPage] = useState(queryObject.limit || '20')
   const handleChange = (itemsPerPage: string) => {
-    addParam('limit', itemsPerPage)
+    updateParams({ paramsToAppend: { limit: itemsPerPage } })
     setItemsPerPage(itemsPerPage)
   }
 
