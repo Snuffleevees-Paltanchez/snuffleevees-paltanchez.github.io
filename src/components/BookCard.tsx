@@ -2,17 +2,14 @@ import { useNavigate, Link } from 'react-router-dom'
 import { Card, CardHeader, CardBody } from '@nextui-org/card'
 import { Skeleton } from '@nextui-org/react'
 import type { Book } from '@/hooks/queries/useBooks'
-import FavoriteChip from './FavoriteChip'
 import BookImage from './BookImage'
 
 export default function BookCard({
   book,
   isLoading = false,
-  markedAsFavoriteCount = 0,
 }: {
   book: Book
   isLoading?: boolean
-  markedAsFavoriteCount?: number
 }) {
   const navigate = useNavigate()
   if (isLoading) return <SkeletonCard />
@@ -23,10 +20,6 @@ export default function BookCard({
         onClick={() => navigate(`/books/${book.isbn}`)}
       >
         <BookImage image={book.imgUrl} title={book.title} customClasses="h-full" />
-        <FavoriteChip
-          customClasses="absolute bottom-3 mx-2"
-          markedAsFavoriteCount={markedAsFavoriteCount}
-        />
       </div>
       <div className="w-full">
         <CardHeader className="flex-col items-start">

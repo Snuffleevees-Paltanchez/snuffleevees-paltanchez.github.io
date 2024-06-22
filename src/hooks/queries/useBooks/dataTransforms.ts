@@ -33,12 +33,7 @@ export const useBooksTransforms = () => {
 }
 
 const parsePrice = (price: number) => {
-  let priceString = price.toString()
-  // if price has leq than 3 digits, add a K
-  if (priceString.length <= 4) {
-    priceString = priceString + 'K'
-  }
-  return priceString
+  return price.toString()
 }
 
 const getBestPrice = (prices: PriceResponse[]) => {
