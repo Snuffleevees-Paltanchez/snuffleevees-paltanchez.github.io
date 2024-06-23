@@ -19,7 +19,7 @@ export default function SidebarRecommendations({ isbn }: { isbn: string }) {
   }
   return (
     <div className="flex flex-col z-10 min-w-fit bg-gray-200 float-left py-5 px-5 h-screen max-h-screen overflow-y-scroll">
-      <h2 className="text-2xl font-regular mb-6">You might also like</h2>
+      <h2 className="text-xl font-regular mb-6">You might also like</h2>
       <div className="flex flex-col gap-4">
         {recommendationsQuery.data?.map((book) => <BookCard key={book.id} book={book} />)}
       </div>
