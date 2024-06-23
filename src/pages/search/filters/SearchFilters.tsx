@@ -4,6 +4,7 @@ import SearchFiltersPriceRange from './SearchFiltersPriceRange'
 import SearchFiltersItemsByPage from './SearchFiltersItemsPerPage'
 import SearchFiltersByCategory from './SearchFiltersByCategory'
 import SearchFiltersActive from './SearchFiltersActive'
+import SearchFiltersByAuthor from './SearchFiltersByAuthor'
 
 export default function SearchFilters() {
   const { queryObject } = useQueryParams()
@@ -13,6 +14,7 @@ export default function SearchFilters() {
       <div className="flex flex-row justify-between w-full">
         <div className="flex flex-row gap-4">
           <SearchFiltersByCategory />
+          <SearchFiltersByAuthor />
           <SearchFiltersPriceRange />
         </div>
         <SearchFiltersItemsByPage />
