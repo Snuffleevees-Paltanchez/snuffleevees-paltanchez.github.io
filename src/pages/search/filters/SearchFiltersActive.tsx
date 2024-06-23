@@ -9,7 +9,7 @@ export default function SearchFiltersActive() {
   const isNumber = (value: string) => {
     return /^\d+$/.test(value)
   }
-  
+
   const chips = useMemo(() => {
     return Object.entries(queryObject)
       .filter(([, value]) => value !== undefined && value !== '')
