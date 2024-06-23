@@ -18,6 +18,7 @@ export default function SearchFiltersItemsByPage() {
         size="sm"
         value={itemsPerPage}
         onChange={(e) => handleChange(e.target.value)}
+        defaultSelectedKeys={[itemsPerPage]}
       >
         <SelectItem key="20">20</SelectItem>
         <SelectItem key="30">30</SelectItem>

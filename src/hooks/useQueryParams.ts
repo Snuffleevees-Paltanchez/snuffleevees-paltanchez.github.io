@@ -34,9 +34,14 @@ export const useQueryParams = () => {
     navigate(`${pathname}?${newQuery.toString()}`)
   }
 
+  const clearParams = () => {
+    navigate(pathname)
+  }
+
   return {
     query,
     queryObject,
     updateParams,
+    clearParams,
   }
 }

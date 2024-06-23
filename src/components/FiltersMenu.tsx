@@ -14,7 +14,9 @@ export default function FiltersMenu({
   return (
     <Popover>
       <PopoverTrigger>
-        <Button variant="solid">{title}</Button>
+        <Button variant="flat" color="primary">
+          {title}
+        </Button>
       </PopoverTrigger>
       <PopoverContent className="p-4">
         {children}

@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useBookByISBNQuery, type Book } from '@/hooks/queries/useBooks'
 import BookDetail from '@/components/BookDetail/BookDetail'
+import LoadingSpinner from '@/components/LoadingSpinner'
 // import SidebarRecommendations from '@/components/BookDetail/SidebarRecommendations'
 
 export default function BookDetailPage() {
@@ -11,7 +12,7 @@ export default function BookDetailPage() {
 
 const BookDetailSection = ({ isbn }: { isbn: string }) => {
   const bookInfoQuery = useBookByISBNQuery(isbn)
-  if (bookInfoQuery.isLoading) return <div> Loading... </div>
+  if (bookInfoQuery.isLoading) return <LoadingSpinner />
   const bookInfo = bookInfoQuery.data || ({} as Book)
   return (
     <div className="flex flex-row relative">

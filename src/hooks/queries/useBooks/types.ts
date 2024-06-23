@@ -38,6 +38,7 @@ export interface BooksResponse {
   total: number
   page: number
   limit: number
+  hasNextPage: boolean
   data: BookResponse[]
 }
 
