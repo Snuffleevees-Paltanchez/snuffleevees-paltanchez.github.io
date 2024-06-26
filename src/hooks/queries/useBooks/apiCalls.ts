@@ -38,8 +38,13 @@ export const useBooksRequests = () => {
     return await client.get<BookResponse>(`/books/isbn/${isbn}`)
   }
 
+  const bookRecommendationsByISBNQuery = async (isbn: string) => {
+    return await client.get<BookResponse[]>(`/books/recommendations/${isbn}`)
+  }
+
   return {
     booksQuery,
     bookByISBNQuery,
+    bookRecommendationsByISBNQuery,
   }
 }

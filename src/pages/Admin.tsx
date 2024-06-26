@@ -5,6 +5,7 @@ import { Input } from '@nextui-org/react'
 import { useAuth0 } from '@auth0/auth0-react'
 import ClipboardButton from '@/components/ClipboardButton'
 import InputPassword from '@/components/PasswordInput'
+import LoadingSpinner from '@/components/LoadingSpinner'
 
 export default function Admin() {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0()
@@ -16,7 +17,7 @@ export default function Admin() {
       })
     }
   }, [isAuthenticated])
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <LoadingSpinner />
   else if (!isAuthenticated) return <div>You are not authenticated. Please login.</div>
   return (
     <div className="flex flex-col p-4 gap-4">

@@ -37,3 +37,14 @@ export const useBookByISBNQuery = (isbn: string) => {
   })
   return { ...query }
 }
+
+export const useBookRecommendationsByISBNQuery = (isbn: string) => {
+  const queryKey = queryKeys.recommendations(isbn)
+  const { mapBook } = useBooksTransforms()
+  const { bookRecommendationsByISBNQuery } = useBooksRequests()
+  const query = useQuery({
+    queryKey,
+    queryFn: () => bookRecommendationsByISBNQuery(isbn).then((books) => books.map(mapBook)),
+  })
+  return { ...query }
+}

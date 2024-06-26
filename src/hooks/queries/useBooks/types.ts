@@ -1,3 +1,5 @@
+import type { Category } from '../useCategories'
+
 export interface Author {
   id: number
   name: string
@@ -29,7 +31,7 @@ export interface BookResponse {
   createdAt: string
   updatedAt: string
   isDeleted: boolean
-  categories: string[]
+  categories: Category[]
   author: Author
   prices: PriceResponse[]
 }
@@ -38,6 +40,7 @@ export interface BooksResponse {
   total: number
   page: number
   limit: number
+  hasNextPage: boolean
   data: BookResponse[]
 }
 

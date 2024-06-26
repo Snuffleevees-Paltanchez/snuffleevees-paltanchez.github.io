@@ -1,2 +1,1 @@
-npm run fixer
-npm run checker
+npx lint-staged

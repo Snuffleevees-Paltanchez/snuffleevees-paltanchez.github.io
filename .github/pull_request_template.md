@@ -7,9 +7,9 @@ Feel free to modify it to fit your needs. -->
 
 <!-- Here give examples of the changes you've made in this pull request. Include an itemized list if you can. It'll help the reviewer -->
 
-### ✨ What's the context?
+### 📋 Requirements
 
-<!-- What's the context for the changes? Are there any -->
+None
 
 ### 📸 Screenshots (optional)
 
