@@ -17,7 +17,8 @@
     "prepare": "husky",
     "cypress": "cypress open",
     "cy:run-e2e": "cypress run --e2e",
-    "cy:run-unit": "cypress run --component"
+    "cy:run-unit": "cypress run --component",
+    "coverage:report": "npx nyc report --reporter=text-summary --reporter=lcov"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",

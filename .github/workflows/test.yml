@@ -18,13 +18,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: E2E Tests
+      - name: Run integration and E2E testing
         uses: cypress-io/github-action@v5
         with:
           wait-on: http://localhost:5173
           start: npx vite --host
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Coverage Report
+        run: npx nyc report --reporter=text-lcov > coverage.lcov
+        env:
+          CI: true
 
   cypress-component-run:
     runs-on: ubuntu-latest
