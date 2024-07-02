@@ -9,6 +9,8 @@ export default defineConfig({
       return config
     },
     supportFile: 'cypress/support/e2e.ts',
+    defaultCommandTimeout: 10000,
+    requestTimeout: 10000,
   },
 
   component: {

@@ -18,14 +18,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run integration and E2E testing
+      - name: Run integration and E2E Testing
         uses: cypress-io/github-action@v5
         with:
           wait-on: http://localhost:5173
           start: npx vite --host
-          browser: chrome
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VITE_MIKBOOKS_API_URL: ${{ secrets.VITE_MIKBOOKS_API_URL }}
 
       - name: Generate Coverage Report
         run: npm run coverage:report
