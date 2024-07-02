@@ -27,32 +27,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VITE_MIKBOOKS_API_URL: ${{ secrets.VITE_MIKBOOKS_API_URL }}
 
-      - name: Generate Coverage Report
+      - name: Generate Coverage Report per file
         run: npm run coverage:report
         env:
           CI: true
 
-      - name: Publish Coverage HTML Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage-report
-          path: ./coverage-report
-
-      - name: Convert HTML to Markdown
-        uses: jacobtomlinson/htmldown-action@v2
-        with:
-          html: ./coverage-report/index.html
-          markdown: ./markdown.md
-
-      - name: Comment Coverage Report on PR
-        uses: pullreminders/comment-on-pr-action@v1
-        with:
-          message: |
-            ```html
-            $(cat ./markdown.md)
-            ```
+      - name: Generate Coverage Summary
+        run: npx nyc report --reporter=text-summary
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI: true
 
   cypress-component-run:
     runs-on: ubuntu-latest

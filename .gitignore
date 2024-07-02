@@ -24,6 +24,6 @@ dist-ssr
 *.sln
 *.sw?
 
-
+coverage
 instrumented
 .nyc_output
