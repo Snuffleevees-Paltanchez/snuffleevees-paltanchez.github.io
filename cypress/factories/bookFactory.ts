@@ -29,6 +29,13 @@ export const createBook = (
     author: {
       name: 'Test author',
     },
+    categories: [
+      {
+        id: 1,
+        name: 'Fiction',
+        isDeleted: false,
+      },
+    ],
   },
 ) => {
   return { ...overrides, prices: createPrices() }
