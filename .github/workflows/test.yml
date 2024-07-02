@@ -32,6 +32,28 @@ jobs:
         env:
           CI: true
 
+      - name: Publish Coverage HTML Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: ./coverage-report
+
+      - name: Convert HTML to Markdown
+        uses: jacobtomlinson/htmldown-action@v2
+        with:
+          html: ./coverage-report/index.html
+          markdown: ./markdown.md
+
+      - name: Comment Coverage Report on PR
+        uses: pullreminders/comment-on-pr-action@v1
+        with:
+          message: |
+            ```html
+            $(cat ./markdown.md)
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   cypress-component-run:
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
