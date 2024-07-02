@@ -4,7 +4,7 @@ import { Button, Chip } from '@nextui-org/react'
 import { useQueryParams } from '@/hooks/useQueryParams'
 
 export default function SearchFiltersActive() {
-  const { queryObject, clearParams } = useQueryParams()
+  const { queryObject, clearParams, updateParams } = useQueryParams()
 
   const isNumber = (value: string) => {
     return /^\d+$/.test(value)
@@ -14,12 +14,19 @@ export default function SearchFiltersActive() {
     return Object.entries(queryObject)
       .filter(([, value]) => value !== undefined && value !== '')
       .map(([key, value]) => {
+        const obj = { key, value, display: value }
         if (isNumber(value)) {
-          return `${key}: ${value}`
+          obj.display = `${key}: ${value}`
         }
-        return value
+        return obj
       })
   }, [queryObject])
+
+  const removeParam = (key: string) => {
+    updateParams({
+      paramsToRemove: [key],
+    })
+  }
 
   return (
     <div className="flex flex-row gap-2 flex-wrap items-center">
@@ -35,7 +42,9 @@ export default function SearchFiltersActive() {
         Clear filters
       </Button>
       {chips.map((chip, i) => (
-        <Chip key={i}>{chip}</Chip>
+        <Chip key={i} onClose={() => removeParam(chip.key)}>
+          {chip.display}
+        </Chip>
       ))}
     </div>
   )

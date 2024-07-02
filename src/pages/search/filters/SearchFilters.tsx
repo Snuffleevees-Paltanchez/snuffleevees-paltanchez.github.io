@@ -1,6 +1,7 @@
 import { Divider } from '@nextui-org/react'
 import { useQueryParams } from '@/hooks/useQueryParams'
 import SearchFiltersPriceRange from './SearchFiltersPriceRange'
+import SearchFiltersRatingRange from './SearchFiltersRatingRange'
 import SearchFiltersItemsByPage from './SearchFiltersItemsPerPage'
 import SearchFiltersByCategory from './SearchFiltersByCategory'
 import SearchFiltersActive from './SearchFiltersActive'
@@ -16,6 +17,7 @@ export default function SearchFilters() {
           <SearchFiltersByCategory />
           <SearchFiltersByAuthor />
           <SearchFiltersPriceRange />
+          <SearchFiltersRatingRange />
         </div>
         <SearchFiltersItemsByPage />
       </div>

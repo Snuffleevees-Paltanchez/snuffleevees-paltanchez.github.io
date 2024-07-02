@@ -31,6 +31,8 @@ export interface BookResponse {
   createdAt: string
   updatedAt: string
   isDeleted: boolean
+  ratingAvg: number
+  ratingsCount: number
   categories: Category[]
   author: Author
   prices: PriceResponse[]
@@ -61,6 +63,10 @@ export interface BookQuery {
   category?: string
   minPrice?: string
   maxPrice?: string
+  ratingCount?: number
+  minRatingAvg?: number
+  maxRatingAvg?: number
+  sortByRating?: 'asc' | 'desc'
   limit?: number
   page?: number
 }

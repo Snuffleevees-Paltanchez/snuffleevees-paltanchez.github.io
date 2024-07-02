@@ -8,10 +8,16 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
   return (
     <div className="flex flex-row h-full w-full m-10 gap-6">
       <div className="flex flex-col gap-4">
-        <BookImage image={bookInfo.imgUrl} title={bookInfo.title} customClasses="h-[300px]" />
-        <div className="flex flex-row gap-2">
-          <Stars rating={0} />
-          <span>0 / 5</span>
+        <BookImage
+          image={bookInfo.imgUrl}
+          title={bookInfo.title}
+          customClasses="h-[300px] min-w-[160px]"
+        />
+        <div className="flex flex-row justify-between">
+          <Stars rating={bookInfo.ratingAvg} />
+          <span>
+            {bookInfo.ratingAvg} ({bookInfo.ratingsCount || 0})
+          </span>
         </div>
         <p className="text-sm">
           <span className="font-bold">ISBN</span> {isbn}

@@ -25,7 +25,9 @@ export default function BookCard({ book, isLoading = false }: { book: Book; isLo
         </CardHeader>
         <CardBody className="pt-2">
           <span className="text-sm line-clamp-4">{book.description}</span>
-          <span className="text-end text-secondary font-semibold text-xl">${book.bestPrice}</span>
+          <span className="text-end text-secondary font-semibold text-xl">
+            ${book.bestPrice} CLP
+          </span>
         </CardBody>
       </div>
     </Card>
