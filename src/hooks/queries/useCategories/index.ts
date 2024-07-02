@@ -18,5 +18,5 @@ export const usePaginatedCategoriesQuery = (name: string) => {
     queryFn: ({ pageParam }) => categoriesQuery({ name, page: pageParam }),
     getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.page + 1 : undefined),
   })
-  return { ...query }
+  return query
 }

@@ -1,3 +1,5 @@
+import { getUserSessionStorage } from '@/hooks/useUserSession'
+
 interface RequestOptions extends RequestInit {
   headers?: HeadersInit
   body?: BodyInit
@@ -20,10 +22,13 @@ const createRequest = async <T>(
   endpoint: string,
   options: RequestOptions,
 ): Promise<T> => {
+  const userSession = getUserSessionStorage()
+
   const defaultOptions: RequestOptions = {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${userSession.token}`,
     },
   }
 

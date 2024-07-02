@@ -19,7 +19,7 @@ export const useBooksQuery = (queryParams: BookQuery) => {
     queryKey,
     queryFn: () => booksQuery({ page: 1, ...queryParams }).then(mapBooks),
   })
-  return { ...query }
+  return query
 }
 
 /**
@@ -35,7 +35,7 @@ export const useBookByISBNQuery = (isbn: string) => {
     queryKey,
     queryFn: () => bookByISBNQuery(isbn).then(mapBook),
   })
-  return { ...query }
+  return query
 }
 
 export const useBookRecommendationsByISBNQuery = (isbn: string) => {
@@ -46,5 +46,5 @@ export const useBookRecommendationsByISBNQuery = (isbn: string) => {
     queryKey,
     queryFn: () => bookRecommendationsByISBNQuery(isbn).then((books) => books.map(mapBook)),
   })
-  return { ...query }
+  return query
 }

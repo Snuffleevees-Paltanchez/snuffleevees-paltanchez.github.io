@@ -1,4 +1,5 @@
-import { LogInIcon, LogOutIcon } from 'lucide-react'
+import { LogInIcon, LogOutIcon, ShieldCheck } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import {
   Avatar,
   Button,
@@ -7,10 +8,11 @@ import {
   DropdownMenu,
   DropdownItem,
 } from '@nextui-org/react'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useUserSession } from '@/hooks/useUserSession'
 
 export default function User() {
-  const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0()
+  const navigate = useNavigate()
+  const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useUserSession()
   if (isLoading) return null
   else if (!isAuthenticated)
     return (
@@ -32,6 +34,13 @@ export default function User() {
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Static Actions">
+          <DropdownItem
+            key="admin"
+            startContent={<ShieldCheck size={24} />}
+            onClick={() => navigate('/admin')}
+          >
+            Admin Panel
+          </DropdownItem>
           <DropdownItem
             key="delete"
             className="text-danger"
