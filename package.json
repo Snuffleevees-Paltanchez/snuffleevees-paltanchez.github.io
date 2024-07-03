@@ -18,7 +18,8 @@
     "cypress": "cypress open",
     "cy:run-e2e": "cypress run --e2e",
     "cy:run-unit": "cypress run --component",
-    "coverage:report": "nyc report --reporter=lcov --reporter=text"
+    "coverage:report": "nyc report --reporter=lcov --reporter=text",
+    "coverage:summary": "nyc report --reporter=text-summary"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",

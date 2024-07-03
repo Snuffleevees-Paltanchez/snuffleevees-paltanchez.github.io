@@ -7,7 +7,7 @@ export default function LandingPage() {
   const books = booksQuery.data?.data || []
   if (booksQuery.isLoading) return <LoadingSpinner />
   return (
-    <div className="flex flex-col m-2 my-4 gap-6">
+    <div className="flex flex-col m-2 my-4 gap-6" data-test-id="landing-page">
       <LandingPageSection sectionTitle="Recently added" books={books} />
       <LandingPageSection sectionTitle="Most popular" books={books} />
     </div>

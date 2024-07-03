@@ -29,7 +29,10 @@ export default function SearchPage() {
           {!booksQuery.data?.data.length ? (
             <SearchNoResults />
           ) : (
-            <div className="flex flex-row flex-wrap my-2 gap-6 justify-center">
+            <div
+              className="flex flex-row flex-wrap my-2 gap-6 justify-center"
+              data-test-id="results-search"
+            >
               {booksQuery.data?.data.map((book, i) => <BookCard key={i} book={book} />)}
             </div>
           )}

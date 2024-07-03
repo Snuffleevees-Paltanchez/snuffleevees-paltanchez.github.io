@@ -33,7 +33,7 @@ jobs:
           CI: true
 
       - name: Generate Coverage Summary
-        run: npx nyc report --reporter=text-summary
+        run: npm run coverage:summary
         env:
           CI: true
 

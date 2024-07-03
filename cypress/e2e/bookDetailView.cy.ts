@@ -8,7 +8,10 @@ describe('Test book detail page', () => {
     cy.wait('@getBook')
   })
   it('Should show book details', () => {
+    cy.get('[data-test-id="book-detail"]').should('be.visible')
     cy.get('[data-test-id="book-detail"]').within(() => {
+      cy.get('[data-test-id="book-image-details"]').should('be.visible')
+      cy.get('[data-test-id="rating"]').should('be.visible')
       cy.get('[data-test-id="title"]').should('have.text', book.title)
       cy.get('[data-test-id="publication-date"]').should(
         'have.text',

@@ -15,6 +15,10 @@ describe('Test book list page', () => {
     cy.wait('@getBooks')
   })
 
+  it('Should show landing page', () => {
+    cy.get('[data-test-id="landing-page"]').should('exist')
+  })
+
   it('Should show ten books on each section of the landing page', () => {
     cy.get('[data-test-id="Recently added"]').within(() => {
       cy.get('[data-test-id="book-card"]').should('have.length', 10)
