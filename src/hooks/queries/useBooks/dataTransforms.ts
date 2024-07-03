@@ -32,8 +32,13 @@ export const useBooksTransforms = () => {
   }
 }
 
+/**
+ * @returns The price as a string with dots as thousands separator
+ * @example
+ * parsePrice(1000000) // '1.000.000'
+ */
 const parsePrice = (price: number) => {
-  return price.toString()
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 }
 
 const getBestPrice = (prices: PriceResponse[]) => {

@@ -1,8 +1,9 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useMutation } from '@tanstack/react-query'
 import { queryKeys } from './queryKeys'
 import { useBooksRequests } from './apiCalls'
 import { BookQuery } from './types'
 import { useBooksTransforms } from './dataTransforms'
+import { useBooksCacheModifiers } from './cacheModifiers'
 
 export type { Book, BookQuery, Price } from './types'
 
@@ -47,4 +48,27 @@ export const useBookRecommendationsByISBNQuery = (isbn: string) => {
     queryFn: () => bookRecommendationsByISBNQuery(isbn).then((books) => books.map(mapBook)),
   })
   return query
+}
+
+export const useBookByISBNMutations = (isbn: string) => {
+  const { updateIsDeletedBookByISBNCache } = useBooksCacheModifiers()
+  const {
+    deleteBookMutation: deleteBookMutationRequest,
+    restoreBookMutation: restoreBookMutationRequest,
+  } = useBooksRequests()
+
+  const deleteBookMutation = useMutation({
+    mutationFn: (id: number) => deleteBookMutationRequest(id),
+    onSuccess: (book) => {
+      updateIsDeletedBookByISBNCache(isbn, book.isDeleted)
+    },
+  })
+
+  const restoreBookMutation = useMutation({
+    mutationFn: (id: number) => restoreBookMutationRequest(id),
+    onSuccess: (book) => {
+      updateIsDeletedBookByISBNCache(isbn, book.isDeleted)
+    },
+  })
+  return { deleteBookMutation, restoreBookMutation }
 }

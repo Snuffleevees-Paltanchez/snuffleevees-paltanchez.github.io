@@ -64,9 +64,9 @@ const createRequest = async <T>(
 const client = (baseUrl: string) => ({
   get: <T>(endpoint: string, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'GET' }),
-  post: <T>(endpoint: string, body: BodyInit, options: RequestOptions = {}): Promise<T> =>
+  post: <T>(endpoint: string, body?: BodyInit, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'POST', body: JSON.stringify(body) }),
-  put: <T>(endpoint: string, body: BodyInit, options: RequestOptions = {}): Promise<T> =>
+  put: <T>(endpoint: string, body?: BodyInit, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'PUT', body: JSON.stringify(body) }),
   delete: <T>(endpoint: string, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'DELETE' }),

@@ -6,6 +6,7 @@ import SearchFiltersItemsByPage from './SearchFiltersItemsPerPage'
 import SearchFiltersByCategory from './SearchFiltersByCategory'
 import SearchFiltersActive from './SearchFiltersActive'
 import SearchFiltersByAuthor from './SearchFiltersByAuthor'
+import SearchFiltersAdmin from './SearchFiltersAdmin'
 
 export default function SearchFilters() {
   const { queryObject } = useQueryParams()
@@ -19,7 +20,10 @@ export default function SearchFilters() {
           <SearchFiltersPriceRange />
           <SearchFiltersRatingRange />
         </div>
-        <SearchFiltersItemsByPage />
+        <div className="flex flex-row gap-4 items-center">
+          <SearchFiltersAdmin />
+          <SearchFiltersItemsByPage />
+        </div>
       </div>
       <Divider className="my-4" />
       <SearchFiltersActive />

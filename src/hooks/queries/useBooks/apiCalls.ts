@@ -22,6 +22,7 @@ export const useBooksRequests = () => {
     sortByRating,
     page,
     limit,
+    isDeleted,
   }: BookQuery) => {
     return await client.get<BooksResponse>('/books', {
       params: {
@@ -38,6 +39,7 @@ export const useBooksRequests = () => {
         sortByRating,
         page: page?.toString(),
         limit: limit?.toString(),
+        isDeleted: `${isDeleted}`,
       },
     })
   }
@@ -50,9 +52,25 @@ export const useBooksRequests = () => {
     return await client.get<BookResponse[]>(`/books/recommendations/${isbn}`)
   }
 
+  const deleteBookMutation = async (id: number) => {
+    const response = await client.delete<{
+      data: BookResponse
+    }>(`/books/${id}`)
+    return response.data
+  }
+
+  const restoreBookMutation = async (id: number) => {
+    const response = await client.put<{
+      data: BookResponse
+    }>(`/books/restore/${id}`)
+    return response.data
+  }
+
   return {
     booksQuery,
     bookByISBNQuery,
     bookRecommendationsByISBNQuery,
+    deleteBookMutation,
+    restoreBookMutation,
   }
 }

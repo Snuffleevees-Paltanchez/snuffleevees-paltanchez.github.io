@@ -17,7 +17,7 @@ export default function AdminChart() {
     <div className="my-4">
       <h5 className="text-lg font-bold mb-6">Key Performance Indicators</h5>
       <BarChart
-        width={600}
+        width={800}
         height={400}
         data={parsedData}
         margin={{

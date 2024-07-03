@@ -1,12 +1,13 @@
 import { Chip } from '@nextui-org/react'
-import PriceTable from '@/components/BookDetail/PriceTable'
+import PriceTable from '@/components/book-detail/PriceTable'
 import BookImage from '@/components/BookImage'
 import { type Book } from '@/hooks/queries/useBooks'
-import Stars from '../Rating/Stars'
+import Stars from '../rating/Stars'
+import AdminActions from './AdminActions'
 
 export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo: Book }) {
   return (
-    <div className="flex flex-row h-full w-full m-10 gap-6">
+    <div className="flex flex-row h-full m-10 gap-6">
       <div className="flex flex-col gap-4">
         <BookImage
           image={bookInfo.imgUrl}
@@ -27,6 +28,7 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
             <Chip key={i}>{category.name}</Chip>
           ))}
         </div>
+        <AdminActions bookInfo={bookInfo} />
       </div>
       <div className="flex flex-col items-start">
         <h1 className="text-3xl font-semibold">{bookInfo.title}</h1>

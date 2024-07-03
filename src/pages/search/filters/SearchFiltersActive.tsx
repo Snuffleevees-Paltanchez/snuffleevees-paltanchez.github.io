@@ -15,7 +15,7 @@ export default function SearchFiltersActive() {
       .filter(([, value]) => value !== undefined && value !== '')
       .map(([key, value]) => {
         const obj = { key, value, display: value }
-        if (isNumber(value)) {
+        if (isNumber(value) || value === 'true' || value === 'false') {
           obj.display = `${key}: ${value}`
         }
         return obj

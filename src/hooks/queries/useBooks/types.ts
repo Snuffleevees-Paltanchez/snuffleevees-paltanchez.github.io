@@ -61,6 +61,7 @@ export interface BookQuery {
   authorId?: string
   authorName?: string
   category?: string
+  isDeleted?: boolean
   minPrice?: string
   maxPrice?: string
   ratingCount?: number
