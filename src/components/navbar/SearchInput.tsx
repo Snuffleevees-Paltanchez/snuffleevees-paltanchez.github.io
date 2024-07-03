@@ -17,7 +17,7 @@ export default function SearchInput() {
     }
   }
   return (
-    <div className="flex items-center">
+    <div className="flex items-center" data-test-id="search-bar">
       <Input
         classNames={{
           base: 'max-w-full h-10 w-full',
@@ -38,6 +38,7 @@ export default function SearchInput() {
         size="sm"
         onClick={() => handleSearch(searchText)}
         isIconOnly
+        data-test-id="search-button"
       >
         <SearchIcon size={18} />
       </Button>

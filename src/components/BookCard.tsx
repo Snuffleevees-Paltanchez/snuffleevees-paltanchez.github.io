@@ -8,7 +8,10 @@ export default function BookCard({ book, isLoading = false }: { book: Book; isLo
   const navigate = useNavigate()
   if (isLoading) return <SkeletonCard />
   return (
-    <Card className="min-w-[400px] max-w-[400px] flex flex-row justify-between">
+    <Card
+      className="min-w-[400px] max-w-[400px] flex flex-row justify-between"
+      data-test-id="book-card"
+    >
       <div
         className="relative min-w-[150px] max-w-[150px] cursor-pointer"
         onClick={() => navigate(`/books/${book.isbn}`)}
@@ -18,14 +21,25 @@ export default function BookCard({ book, isLoading = false }: { book: Book; isLo
       <div className="w-full">
         <CardHeader className="flex-col items-start">
           <Link to={`/books/${book.isbn}`}>
-            <h4 className="font-medium text-large">{book.title}</h4>
+            <h4 className="font-medium text-large" data-test-id="title-card">
+              {book.title}
+            </h4>
           </Link>
-          <span className="font-medium italic">{book.publicationDate}</span>
-          <span className="italic">{book.author.name}</span>
+          <span className="font-medium italic" data-test-id="publication-date-card">
+            {book.publicationDate}
+          </span>
+          <span className="italic" data-test-id="author-name-card">
+            {book.author.name}
+          </span>
         </CardHeader>
         <CardBody className="pt-2">
-          <span className="text-sm line-clamp-4">{book.description}</span>
-          <span className="text-end text-secondary font-semibold text-xl">
+          <span className="text-sm line-clamp-4" data-test-id="description-card">
+            {book.description}
+          </span>
+          <span
+            className="text-end text-secondary font-semibold text-xl"
+            data-test-id="best-price-card"
+          >
             ${book.bestPrice} CLP
           </span>
         </CardBody>

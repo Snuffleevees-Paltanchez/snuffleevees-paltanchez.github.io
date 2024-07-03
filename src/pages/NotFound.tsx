@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <div>404 Error</div>
+  return <div data-test-id="not-found">404 Error</div>
 }
