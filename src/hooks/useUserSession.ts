@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { useUserSessionQuery } from '@/hooks/queries/useUserSession'
 
@@ -21,7 +21,10 @@ export const useUserSession = () => {
     }
   }, [isAuthenticated])
   const loading = isLoading || userSession.isLoading
-  const isAdmin = userSession.data?.isAdmin
+  const isAdmin = useMemo(
+    () => (userSession.data?.isAdmin && isAuthenticated) || false,
+    [userSession.data, isAuthenticated],
+  )
 
   useEffect(() => {
     setUserSessionStorage({ token, isAdmin })

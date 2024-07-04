@@ -1,7 +1,15 @@
 import { useState } from 'react'
-import { Button, Modal, ModalHeader, ModalContent, ModalBody, ModalFooter } from '@nextui-org/react'
+import { Button } from '@nextui-org/react'
+import DangerModal from './DangerModal'
+import { TrashIcon } from 'lucide-react'
 
-export default function DangerButton({ onAction }: { onAction: () => void }) {
+export default function DangerButton({
+  onAction,
+  description,
+}: {
+  onAction: () => void
+  description?: string
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const onActionHandler = () => {
     onAction()
@@ -12,6 +20,7 @@ export default function DangerButton({ onAction }: { onAction: () => void }) {
       <Button
         variant="bordered"
         color="danger"
+        startContent={<TrashIcon size={16} />}
         onClick={() => {
           setIsModalOpen(true)
         }}
@@ -22,40 +31,8 @@ export default function DangerButton({ onAction }: { onAction: () => void }) {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onAction={onActionHandler}
+        description={description}
       />
     </>
   )
 }
-
-const DangerModal = ({
-  isOpen,
-  onAction,
-  onClose,
-}: {
-  isOpen: boolean
-  onAction: () => void
-  onClose: () => void
-}) => (
-  <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
-    <ModalContent>
-      {(onClose) => (
-        <>
-          <ModalHeader className="flex flex-col gap-1">Are you sure?</ModalHeader>
-          <ModalBody>
-            <p className="text-sm">
-              Are you sure you want to mark this book as deleted? You can undo this action later.
-            </p>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" variant="light" onPress={onClose}>
-              Cancel
-            </Button>
-            <Button color="danger" onPress={onAction}>
-              Delete
-            </Button>
-          </ModalFooter>
-        </>
-      )}
-    </ModalContent>
-  </Modal>
-)

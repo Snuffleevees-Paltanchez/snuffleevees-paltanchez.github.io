@@ -21,7 +21,7 @@ const BookDetailSection = ({ isbn }: { isbn: string }) => {
     <div className="flex flex-row relative">
       <div className="flex flex-col w-full">
         {bookInfo.isDeleted && <DeletedBookWarning />}
-        <BookDetail isbn={isbn} bookInfo={bookInfo} />
+        <BookDetail bookInfo={bookInfo} />
       </div>
       <SidebarRecommendations isbn={isbn} />
     </div>

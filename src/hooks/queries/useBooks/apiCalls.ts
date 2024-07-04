@@ -1,5 +1,5 @@
 import { useMikbooksClient } from '@/hooks/useClients'
-import type { BookQuery, BooksResponse, BookResponse } from './types'
+import type { BookQuery, BooksResponse, BookResponse, PriceResponse } from './types'
 
 export const useBooksRequests = () => {
   const client = useMikbooksClient()
@@ -44,6 +44,10 @@ export const useBooksRequests = () => {
     })
   }
 
+  const bookByIdQuery = async (id: number) => {
+    return await client.get<BookResponse>(`/books/id/${id}`)
+  }
+
   const bookByISBNQuery = async (isbn: string) => {
     return await client.get<BookResponse>(`/books/isbn/${isbn}`)
   }
@@ -66,11 +70,28 @@ export const useBooksRequests = () => {
     return response.data
   }
 
+  const deletePriceMutation = async (id: number) => {
+    const response = await client.delete<{
+      data: PriceResponse
+    }>(`/prices/${id}`)
+    return response.data
+  }
+
+  const restorePriceMutation = async (id: number) => {
+    const response = await client.put<{
+      data: PriceResponse
+    }>(`/prices/restore/${id}`)
+    return response.data
+  }
+
   return {
     booksQuery,
+    bookByIdQuery,
     bookByISBNQuery,
     bookRecommendationsByISBNQuery,
     deleteBookMutation,
     restoreBookMutation,
+    deletePriceMutation,
+    restorePriceMutation,
   }
 }

@@ -1,6 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query'
+import { parsePrice } from './dataTransforms'
 import { queryKeys } from './queryKeys'
-import type { Book } from './types'
+import type { Book, PriceResponse } from './types'
 
 export const useBooksCacheModifiers = () => {
   const queryClient = useQueryClient()
@@ -14,8 +15,24 @@ export const useBooksCacheModifiers = () => {
     }))
   }
 
+  const updatePriceFromBookByISBNCache = (isbn: string, price: PriceResponse) => {
+    queryClient.setQueryData(queryKeys.byISBN(isbn), (oldData: Book) => ({
+      ...oldData,
+      prices: oldData.prices.map((oldPrice) => {
+        if (oldPrice.id === price.id) {
+          return {
+            ...price,
+            price: parsePrice(price.price),
+          }
+        }
+        return oldPrice
+      }),
+    }))
+  }
+
   return {
     updateBookByISBNCache,
     updateIsDeletedBookByISBNCache,
+    updatePriceFromBookByISBNCache,
   }
 }

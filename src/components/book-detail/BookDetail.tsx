@@ -3,9 +3,9 @@ import PriceTable from '@/components/book-detail/PriceTable'
 import BookImage from '@/components/BookImage'
 import { type Book } from '@/hooks/queries/useBooks'
 import Stars from '../rating/Stars'
-import AdminActions from './AdminActions'
+import AdminActions from './admin/AdminActions'
 
-export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo: Book }) {
+export default function BookDetail({ bookInfo }: { bookInfo: Book }) {
   return (
     <div className="flex flex-row h-full m-10 gap-6">
       <div className="flex flex-col gap-4">
@@ -21,7 +21,7 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
           </span>
         </div>
         <p className="text-sm">
-          <span className="font-bold">ISBN</span> {isbn}
+          <span className="font-bold">ISBN</span> {bookInfo.isbn}
         </p>
         <div className="flex flex-row gap-2">
           {bookInfo.categories.map((category, i) => (
@@ -35,7 +35,7 @@ export default function BookDetail({ isbn, bookInfo }: { isbn: string; bookInfo:
         <span className="my-1 font-medium italic text-sm">{bookInfo.publicationDate}</span>
         <span className="text-lg">{bookInfo.author?.name}</span>
         <p className="mb-6">{bookInfo.description}</p>
-        <PriceTable prices={bookInfo.prices} />
+        <PriceTable isbn={bookInfo.isbn} prices={bookInfo.prices} />
       </div>
     </div>
   )

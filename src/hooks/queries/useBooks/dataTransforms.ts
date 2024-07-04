@@ -37,7 +37,7 @@ export const useBooksTransforms = () => {
  * @example
  * parsePrice(1000000) // '1.000.000'
  */
-const parsePrice = (price: number) => {
+export const parsePrice = (price: number) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 }
 
