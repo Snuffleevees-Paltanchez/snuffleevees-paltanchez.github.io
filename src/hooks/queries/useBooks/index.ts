@@ -3,7 +3,7 @@ import { queryKeys } from './queryKeys'
 import { useBooksRequests } from './apiCalls'
 import { BookQuery } from './types'
 import { useBooksTransforms } from './dataTransforms'
-import { useBooksCacheModifiers } from './cacheModifiers'
+import { useBooksByISBNCacheModifiers } from './cacheModifiers'
 
 export type { Book, BookQuery, Price } from './types'
 
@@ -62,8 +62,9 @@ export const useBookRecommendationsByISBNQuery = (isbn: string) => {
 }
 
 export const useBookByISBNMutations = (isbn: string) => {
+  const queryKey = queryKeys.byISBN(isbn)
   const { updateIsDeletedBookByISBNCache, updatePriceFromBookByISBNCache } =
-    useBooksCacheModifiers()
+    useBooksByISBNCacheModifiers(queryKey)
   const {
     deleteBookMutation: deleteBookMutationRequest,
     restoreBookMutation: restoreBookMutationRequest,
@@ -74,28 +75,28 @@ export const useBookByISBNMutations = (isbn: string) => {
   const deleteBookMutation = useMutation({
     mutationFn: (id: number) => deleteBookMutationRequest(id),
     onSuccess: (book) => {
-      updateIsDeletedBookByISBNCache(isbn, book.isDeleted)
+      updateIsDeletedBookByISBNCache(book.isDeleted)
     },
   })
 
   const restoreBookMutation = useMutation({
     mutationFn: (id: number) => restoreBookMutationRequest(id),
     onSuccess: (book) => {
-      updateIsDeletedBookByISBNCache(isbn, book.isDeleted)
+      updateIsDeletedBookByISBNCache(book.isDeleted)
     },
   })
 
   const deletePriceMutation = useMutation({
     mutationFn: (priceId: number) => deletePriceMutationRequest(priceId),
     onSuccess: (price) => {
-      updatePriceFromBookByISBNCache(isbn, price)
+      updatePriceFromBookByISBNCache(price)
     },
   })
 
   const restorePriceMutation = useMutation({
     mutationFn: (priceId: number) => restorePriceMutationRequest(priceId),
     onSuccess: (price) => {
-      updatePriceFromBookByISBNCache(isbn, price)
+      updatePriceFromBookByISBNCache(price)
     },
   })
 
