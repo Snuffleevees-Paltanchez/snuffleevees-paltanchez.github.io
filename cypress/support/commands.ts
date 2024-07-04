@@ -35,3 +35,6 @@
 //     }
 //   }
 // }
+Cypress.Commands.add('getById', (selector, ...options) => {
+  return cy.get(`[data-test-id=${selector}]`, ...options)
+})

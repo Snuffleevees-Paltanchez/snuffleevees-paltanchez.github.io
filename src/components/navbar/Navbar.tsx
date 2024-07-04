@@ -7,7 +7,11 @@ import SearchInput from './SearchInput'
 export default function Navbar() {
   const navigate = useNavigate()
   return (
-    <NavBarComponent shouldHideOnScroll className="bg-primary text-primary-foreground w-full">
+    <NavBarComponent
+      shouldHideOnScroll
+      className="bg-primary text-primary-foreground w-full"
+      data-test-id="navbar"
+    >
       <NavbarContent justify="start">
         <NavbarBrand className="cursor-pointer" onClick={() => navigate('/')}>
           <Logo />
