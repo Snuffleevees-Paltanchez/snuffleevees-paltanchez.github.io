@@ -8,8 +8,16 @@ export default function LandingPage() {
   if (booksQuery.isLoading) return <LoadingSpinner />
   return (
     <div className="flex flex-col m-2 my-4 gap-6" data-test-id="landing-page">
-      <LandingPageSection sectionTitle="Recently added" books={books} />
-      <LandingPageSection sectionTitle="Most popular" books={books} />
+      <LandingPageSection
+        sectionTitle="Recently added"
+        books={books}
+        dataTestId="recently-added-section"
+      />
+      <LandingPageSection
+        sectionTitle="Most popular"
+        books={books}
+        dataTestId="most-popular-section"
+      />
     </div>
   )
 }

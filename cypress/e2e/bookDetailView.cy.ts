@@ -2,23 +2,23 @@ import { createBook } from '../factories/bookFactory'
 
 const book = createBook()
 describe('Test book detail page', () => {
-  beforeEach(() => {
+  before(() => {
     cy.intercept('GET', '/books/isbn/*', book).as('getBook')
     cy.visit(`/books/${book.isbn}`)
     cy.wait('@getBook')
   })
   it('Should show book details', () => {
-    cy.get('[data-test-id="book-detail"]').should('be.visible')
-    cy.get('[data-test-id="book-detail"]').within(() => {
-      cy.get('[data-test-id="book-image-details"]').should('be.visible')
-      cy.get('[data-test-id="rating"]').should('be.visible')
-      cy.get('[data-test-id="title"]').should('have.text', book.title)
-      cy.get('[data-test-id="publication-date"]').should(
+    cy.getById('book-detail').should('be.visible')
+    cy.getById('book-detail').within(() => {
+      cy.getById('book-image-details').should('be.visible')
+      cy.getById('rating').should('be.visible')
+      cy.getById('title').should('have.text', book.title)
+      cy.getById('publication-date').should(
         'have.text',
         book.publicationDate ? book.publicationDate : 'No date registered',
       )
-      cy.get('[data-test-id="author-name"]').should('have.text', book.author.name)
-      cy.get('[data-test-id="description"]').should('have.text', book.description)
+      cy.getById('author-name').should('have.text', book.author.name)
+      cy.getById('description').should('have.text', book.description)
     })
   })
 

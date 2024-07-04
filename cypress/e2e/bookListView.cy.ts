@@ -9,37 +9,37 @@ describe('Test book list page', () => {
     hasNextPage: false,
     data: books,
   }
-  beforeEach(() => {
+  before(() => {
     cy.intercept('GET', '/books*', booksResponse).as('getBooks')
     cy.visit('/')
     cy.wait('@getBooks')
   })
 
   it('Should show landing page', () => {
-    cy.get('[data-test-id="landing-page"]').should('exist')
+    cy.getById('landing-page').should('exist')
   })
 
   it('Should show ten books on each section of the landing page', () => {
-    cy.get('[data-test-id="Recently added"]').within(() => {
-      cy.get('[data-test-id="book-card"]').should('have.length', 10)
+    cy.getById('recently-added-section').within(() => {
+      cy.getById('book-card').should('have.length', 10)
     })
-    cy.get('[data-test-id="Most popular"]').within(() => {
-      cy.get('[data-test-id="book-card"]').should('have.length', 10)
+    cy.getById('most-popular-section').within(() => {
+      cy.getById('book-card').should('have.length', 10)
     })
   })
 
   it('Should show book summary in each card', () => {
-    cy.get('[data-test-id="Recently added"]').within(() => {
-      cy.get('[data-test-id="book-card"]').each((element, index) => {
+    cy.getById('recently-added-section').within(() => {
+      cy.getById('book-card').each((element, index) => {
         cy.wrap(element).within(() => {
-          cy.get('[data-test-id="title-card"]').should('have.text', books[index].title)
-          cy.get('[data-test-id="publication-date-card"]').should(
+          cy.getById('title-card').should('have.text', books[index].title)
+          cy.getById('publication-date-card').should(
             'have.text',
             books[index].publicationDate ? books[index].publicationDate : 'No date registered',
           )
-          cy.get('[data-test-id="author-name-card"]').should('have.text', books[index].author.name)
-          cy.get('[data-test-id="description-card"]').should('have.text', books[index].description)
-          cy.get('[data-test-id="best-price-card"]').should('exist')
+          cy.getById('author-name-card').should('have.text', books[index].author.name)
+          cy.getById('description-card').should('have.text', books[index].description)
+          cy.getById('best-price-card').should('exist')
         })
       })
     })
