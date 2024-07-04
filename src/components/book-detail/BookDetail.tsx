@@ -44,6 +44,7 @@ export default function BookDetail({ bookInfo }: { bookInfo: Book }) {
         <p className="mb-6" data-test-id="description">
           {bookInfo.description}
         </p>
+
         <PriceTable isbn={bookInfo.isbn} prices={bookInfo.prices} />
       </div>
     </div>
