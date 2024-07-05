@@ -10,9 +10,7 @@ describe('Test book list page', () => {
     data: books,
   }
   before(() => {
-    cy.intercept('GET', `${Cypress.env('VITE_MIKBOOKS_API_URL')}/books`, booksResponse).as(
-      'getBooks',
-    )
+    cy.intercept('GET', '/books*', booksResponse).as('getBooks')
     cy.visit('/')
     cy.wait('@getBooks')
   })
