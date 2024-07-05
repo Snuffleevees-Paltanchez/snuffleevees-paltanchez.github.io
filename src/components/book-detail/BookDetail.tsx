@@ -1,8 +1,8 @@
 import { Chip } from '@nextui-org/react'
+import { type Book } from '@/hooks/queries/useBooks'
 import PriceTable from '@/components/book-detail/PriceTable'
 import BookImage from '@/components/BookImage'
-import { type Book } from '@/hooks/queries/useBooks'
-import Stars from '../rating/Stars'
+import Stars from '@/components/rating/Stars'
 import AdminActions from './admin/AdminActions'
 
 export default function BookDetail({ bookInfo }: { bookInfo: Book }) {

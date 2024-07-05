@@ -1,4 +1,5 @@
 import { createBook } from '../factories/bookFactory'
+import { parsePrice } from './utils'
 
 const book = createBook()
 describe('Test book detail page', () => {
@@ -29,9 +30,10 @@ describe('Test book detail page', () => {
         cy.get('tr')
           .first()
           .within(() => {
-            cy.get('th').should('have.length', 2)
+            cy.get('th').should('have.length', 3)
             cy.get('th').eq(0).should('have.text', 'Website')
             cy.get('th').eq(1).should('have.text', 'Price')
+            cy.get('th').eq(2).should('have.text', 'Status')
           })
       })
       cy.get('tbody').within(() => {
@@ -41,7 +43,10 @@ describe('Test book detail page', () => {
             .eq(index)
             .within(() => {
               cy.get('td').eq(0).should('be.visible')
-              cy.get('td').eq(1).should('have.text', `$${price.price}`)
+              cy.get('td')
+                .eq(1)
+                .should('have.text', `$${parsePrice(price.price)} CLP`)
+              cy.get('td').eq(2).should('have.text', 'Up to date')
             })
         })
       })

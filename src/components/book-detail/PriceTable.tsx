@@ -78,5 +78,5 @@ const parseWebsite = (url: string) => {
 }
 
 const StatusChip = ({ isDeleted }: { isDeleted: boolean }) => {
-  return isDeleted ? <Chip color="warning">Outdated</Chip> : <Chip color="primary">Active</Chip>
+  return isDeleted ? <Chip color="warning">Outdated</Chip> : <Chip color="primary">Up to date</Chip>
 }
