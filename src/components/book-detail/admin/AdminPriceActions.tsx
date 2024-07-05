@@ -10,10 +10,6 @@ export default function AdminPriceActions({ isbn, price }: { isbn: string; price
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
 
-  const onEdit = () => {
-    console.log('Edit price', price)
-  }
-
   const onRestore = () => {
     restorePriceMutation.mutateAsync(price.id)
   }
@@ -61,9 +57,10 @@ export default function AdminPriceActions({ isbn, price }: { isbn: string; price
         </DropdownMenu>
       </Dropdown>
       <EditPriceModal
+        isbn={isbn}
+        price={price}
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
-        onAction={onEdit}
       />
       <DangerModal
         isOpen={isDeleteModalOpen}

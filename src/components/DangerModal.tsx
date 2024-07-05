@@ -29,10 +29,10 @@ export default function DangerModal({
               </p>
             </ModalBody>
             <ModalFooter>
-              <Button color="primary" variant="light" onPress={onClose}>
+              <Button color="primary" variant="light" onClick={onClose}>
                 Cancel
               </Button>
-              <Button color="danger" onPress={onAction}>
+              <Button color="danger" onClick={onAction}>
                 Delete
               </Button>
             </ModalFooter>

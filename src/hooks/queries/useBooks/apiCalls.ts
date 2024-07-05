@@ -84,6 +84,13 @@ export const useBooksRequests = () => {
     return response.data
   }
 
+  const updatePriceAmountMutation = async ({ id, price }: { id: number; price: number }) => {
+    const response = await client.put<PriceResponse>(`/prices/${id}`, {
+      price,
+    })
+    return response
+  }
+
   return {
     booksQuery,
     bookByIdQuery,
@@ -93,5 +100,6 @@ export const useBooksRequests = () => {
     restoreBookMutation,
     deletePriceMutation,
     restorePriceMutation,
+    updatePriceAmountMutation,
   }
 }

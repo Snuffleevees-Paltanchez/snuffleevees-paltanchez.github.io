@@ -70,6 +70,7 @@ export const useBookByISBNMutations = (isbn: string) => {
     restoreBookMutation: restoreBookMutationRequest,
     deletePriceMutation: deletePriceMutationRequest,
     restorePriceMutation: restorePriceMutationRequest,
+    updatePriceAmountMutation: updatePriceAmountMutationRequest,
   } = useBooksRequests()
 
   const deleteBookMutation = useMutation({
@@ -100,5 +101,18 @@ export const useBookByISBNMutations = (isbn: string) => {
     },
   })
 
-  return { deleteBookMutation, restoreBookMutation, deletePriceMutation, restorePriceMutation }
+  const updatePriceAmountMutation = useMutation({
+    mutationFn: (price: { id: number; price: number }) => updatePriceAmountMutationRequest(price),
+    onSuccess: (price) => {
+      updatePriceFromBookByISBNCache(price)
+    },
+  })
+
+  return {
+    deleteBookMutation,
+    restoreBookMutation,
+    deletePriceMutation,
+    restorePriceMutation,
+    updatePriceAmountMutation,
+  }
 }
