@@ -6,10 +6,9 @@ import LoadingSpinner from '@/components/LoadingSpinner'
 import AdminChart from '@/components/admin/AdminChart'
 
 export default function Admin() {
-  const { user, isAuthenticated, isLoading, token, isAdmin } = useUserSession()
+  const { user, isAuthenticated, isLoading, token } = useUserSession()
   if (isLoading) return <LoadingSpinner />
   else if (!isAuthenticated) return <div>You are not authenticated. Please login.</div>
-  else if (!isAdmin) return <div>You are not an admin</div>
   return (
     <div className="flex flex-col p-6 my-4 gap-4">
       <span>

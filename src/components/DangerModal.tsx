@@ -5,11 +5,13 @@ export default function DangerModal({
   onAction,
   onClose,
   description,
+  buttonText = 'Delete',
 }: {
   isOpen: boolean
   onAction: () => void
   onClose: () => void
   description?: string
+  buttonText?: string
 }) {
   return (
     <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
@@ -33,7 +35,7 @@ export default function DangerModal({
                 Cancel
               </Button>
               <Button color="danger" onClick={onAction}>
-                Delete
+                {buttonText}
               </Button>
             </ModalFooter>
           </>

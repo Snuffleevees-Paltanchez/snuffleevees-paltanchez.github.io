@@ -9,7 +9,7 @@ interface VolumeInfo {
   printType: string
   categories: string[]
   averageRating: number
-  ratingsCount: number
+  ratingCount: number
   maturityRating: string
   allowAnonLogging: boolean
   contentVersion: string
