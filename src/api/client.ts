@@ -1,3 +1,4 @@
+import { getUserSessionStorage } from '@/hooks/useUserSession'
 interface RequestOptions extends RequestInit {
   headers?: HeadersInit
   body?: BodyInit
@@ -20,10 +21,13 @@ const createRequest = async <T>(
   endpoint: string,
   options: RequestOptions,
 ): Promise<T> => {
+  const userSession = getUserSessionStorage()
+
   const defaultOptions: RequestOptions = {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${userSession.token}`,
     },
   }
 
@@ -59,9 +63,9 @@ const createRequest = async <T>(
 const client = (baseUrl: string) => ({
   get: <T>(endpoint: string, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'GET' }),
-  post: <T>(endpoint: string, body: BodyInit, options: RequestOptions = {}): Promise<T> =>
+  post: <T>(endpoint: string, body?: unknown, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'POST', body: JSON.stringify(body) }),
-  put: <T>(endpoint: string, body: BodyInit, options: RequestOptions = {}): Promise<T> =>
+  put: <T>(endpoint: string, body?: unknown, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'PUT', body: JSON.stringify(body) }),
   delete: <T>(endpoint: string, options: RequestOptions = {}): Promise<T> =>
     createRequest<T>(baseUrl, endpoint, { ...options, method: 'DELETE' }),

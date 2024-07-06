@@ -40,7 +40,7 @@ export default function BookCard({ book, isLoading = false }: { book: Book; isLo
             className="text-end text-secondary font-semibold text-xl"
             data-test-id="best-price-card"
           >
-            ${book.bestPrice}
+            ${book.bestPrice} CLP
           </span>
         </CardBody>
       </div>

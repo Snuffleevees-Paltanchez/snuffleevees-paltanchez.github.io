@@ -20,5 +20,5 @@ export const usePaginatedAuthorsQuery = (name: string) => {
     queryFn: ({ pageParam }) => authorsQuery({ name, page: pageParam }).then(mapAuthors),
     getNextPageParam: (lastPage) => (lastPage.hasNextPage ? lastPage.page + 1 : undefined),
   })
-  return { ...query }
+  return query
 }

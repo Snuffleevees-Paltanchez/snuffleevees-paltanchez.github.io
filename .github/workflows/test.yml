@@ -37,6 +37,13 @@ jobs:
         env:
           CI: true
 
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
   cypress-component-run:
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}

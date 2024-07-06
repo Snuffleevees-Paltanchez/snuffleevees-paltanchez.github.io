@@ -1,26 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
-import { useState, useEffect } from 'react'
 import { Input } from '@nextui-org/react'
-import { useAuth0 } from '@auth0/auth0-react'
+import { useUserSession } from '@/hooks/useUserSession'
 import ClipboardButton from '@/components/ClipboardButton'
 import InputPassword from '@/components/PasswordInput'
 import LoadingSpinner from '@/components/LoadingSpinner'
+import AdminChart from '@/components/admin/AdminChart'
 
 export default function Admin() {
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0()
-  const [token, setToken] = useState<string | undefined>()
-  useEffect(() => {
-    if (isAuthenticated) {
-      getAccessTokenSilently().then((authToken) => {
-        setToken(authToken)
-      })
-    }
-  }, [isAuthenticated])
+  const { user, isAuthenticated, isLoading, token, isAdmin } = useUserSession()
   if (isLoading) return <LoadingSpinner />
   else if (!isAuthenticated) return <div>You are not authenticated. Please login.</div>
+  else if (!isAdmin) return <div>You are not an admin</div>
   return (
-    <div className="flex flex-col p-4 gap-4">
+    <div className="flex flex-col p-6 my-4 gap-4">
       <span>
         Your are authenticated as <b className="mx-1">{user?.name}</b> with email
         <b className="mx-1">{user?.email}</b>
@@ -35,6 +26,7 @@ export default function Admin() {
         <InputPassword value={token} readOnly type="password" />
         <ClipboardButton text={token} />
       </div>
+      <AdminChart />
     </div>
   )
 }

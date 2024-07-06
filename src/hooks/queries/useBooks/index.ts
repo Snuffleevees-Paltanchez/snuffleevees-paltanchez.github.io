@@ -1,8 +1,9 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useMutation } from '@tanstack/react-query'
 import { queryKeys } from './queryKeys'
 import { useBooksRequests } from './apiCalls'
 import { BookQuery } from './types'
 import { useBooksTransforms } from './dataTransforms'
+import { useBooksByISBNCacheModifiers } from './cacheModifiers'
 
 export type { Book, BookQuery, Price } from './types'
 
@@ -19,7 +20,7 @@ export const useBooksQuery = (queryParams: BookQuery) => {
     queryKey,
     queryFn: () => booksQuery({ page: 1, ...queryParams }).then(mapBooks),
   })
-  return { ...query }
+  return query
 }
 
 /**
@@ -35,7 +36,18 @@ export const useBookByISBNQuery = (isbn: string) => {
     queryKey,
     queryFn: () => bookByISBNQuery(isbn).then(mapBook),
   })
-  return { ...query }
+  return query
+}
+
+export const useBookByIdQuery = (id: number) => {
+  const queryKey = queryKeys.byId(id)
+  const { mapBook } = useBooksTransforms()
+  const { bookByIdQuery } = useBooksRequests()
+  const query = useQuery({
+    queryKey,
+    queryFn: () => bookByIdQuery(id).then(mapBook),
+  })
+  return query
 }
 
 export const useBookRecommendationsByISBNQuery = (isbn: string) => {
@@ -46,5 +58,61 @@ export const useBookRecommendationsByISBNQuery = (isbn: string) => {
     queryKey,
     queryFn: () => bookRecommendationsByISBNQuery(isbn).then((books) => books.map(mapBook)),
   })
-  return { ...query }
+  return query
+}
+
+export const useBookByISBNMutations = (isbn: string) => {
+  const queryKey = queryKeys.byISBN(isbn)
+  const { updateIsDeletedBookByISBNCache, updatePriceFromBookByISBNCache } =
+    useBooksByISBNCacheModifiers(queryKey)
+  const {
+    deleteBookMutation: deleteBookMutationRequest,
+    restoreBookMutation: restoreBookMutationRequest,
+    deletePriceMutation: deletePriceMutationRequest,
+    restorePriceMutation: restorePriceMutationRequest,
+    updatePriceAmountMutation: updatePriceAmountMutationRequest,
+  } = useBooksRequests()
+
+  const deleteBookMutation = useMutation({
+    mutationFn: (id: number) => deleteBookMutationRequest(id),
+    onSuccess: (book) => {
+      updateIsDeletedBookByISBNCache(book.isDeleted)
+    },
+  })
+
+  const restoreBookMutation = useMutation({
+    mutationFn: (id: number) => restoreBookMutationRequest(id),
+    onSuccess: (book) => {
+      updateIsDeletedBookByISBNCache(book.isDeleted)
+    },
+  })
+
+  const deletePriceMutation = useMutation({
+    mutationFn: (priceId: number) => deletePriceMutationRequest(priceId),
+    onSuccess: (price) => {
+      updatePriceFromBookByISBNCache(price)
+    },
+  })
+
+  const restorePriceMutation = useMutation({
+    mutationFn: (priceId: number) => restorePriceMutationRequest(priceId),
+    onSuccess: (price) => {
+      updatePriceFromBookByISBNCache(price)
+    },
+  })
+
+  const updatePriceAmountMutation = useMutation({
+    mutationFn: (price: { id: number; price: number }) => updatePriceAmountMutationRequest(price),
+    onSuccess: (price) => {
+      updatePriceFromBookByISBNCache(price)
+    },
+  })
+
+  return {
+    deleteBookMutation,
+    restoreBookMutation,
+    deletePriceMutation,
+    restorePriceMutation,
+    updatePriceAmountMutation,
+  }
 }

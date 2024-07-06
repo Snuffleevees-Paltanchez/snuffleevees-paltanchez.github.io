@@ -16,5 +16,5 @@ export const useBookInfoQuery = (isbn: string) => {
   const queryKey = useQueryKey(isbn)
   const { bookInfoQuery } = useBookInfoRequests(isbn)
   const query = useQuery({ queryKey, queryFn: () => bookInfoQuery().then(mapBookInfo) })
-  return { ...query }
+  return query
 }
