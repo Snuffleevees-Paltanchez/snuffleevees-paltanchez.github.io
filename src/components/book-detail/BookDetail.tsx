@@ -18,7 +18,7 @@ export default function BookDetail({ bookInfo }: { bookInfo: Book }) {
         <div className="flex flex-row justify-between">
           <Stars rating={bookInfo.ratingAvg} dataTestId="rating" />
           <span>
-            {bookInfo.ratingAvg} ({bookInfo.ratingsCount || 0})
+            {bookInfo.ratingAvg} ({bookInfo.ratingCount || 0})
           </span>
         </div>
         <p className="text-sm">

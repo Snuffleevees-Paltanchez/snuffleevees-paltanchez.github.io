@@ -10,9 +10,11 @@ import {
 } from '@nextui-org/react'
 import { useUserSession } from '@/hooks/useUserSession'
 
+type CollectionElement = ReturnType<typeof DropdownItem>
+
 export default function User() {
   const navigate = useNavigate()
-  const { user, isAuthenticated, isLoading, loginWithRedirect, logout } = useUserSession()
+  const { user, isAuthenticated, isAdmin, isLoading, loginWithRedirect, logout } = useUserSession()
   if (isLoading) return null
   else if (!isAuthenticated)
     return (
@@ -34,13 +36,17 @@ export default function User() {
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Static Actions">
-          <DropdownItem
-            key="admin"
-            startContent={<ShieldCheck size={24} />}
-            onClick={() => navigate('/admin')}
-          >
-            Admin Panel
-          </DropdownItem>
+          {
+            (isAdmin && (
+              <DropdownItem
+                key="admin"
+                startContent={<ShieldCheck size={24} />}
+                onClick={() => navigate('/admin')}
+              >
+                Admin Panel
+              </DropdownItem>
+            )) as CollectionElement
+          }
           <DropdownItem
             key="delete"
             className="text-danger"

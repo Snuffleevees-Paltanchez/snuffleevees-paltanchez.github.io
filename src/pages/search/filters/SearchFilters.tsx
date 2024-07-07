@@ -1,5 +1,6 @@
 import { Divider } from '@nextui-org/react'
 import { useQueryParams } from '@/hooks/useQueryParams'
+import SearchFiltersSortBy from './SearchFiltersSortBy'
 import SearchFiltersPriceRange from './SearchFiltersPriceRange'
 import SearchFiltersRatingRange from './SearchFiltersRatingRange'
 import SearchFiltersItemsByPage from './SearchFiltersItemsPerPage'
@@ -15,6 +16,7 @@ export default function SearchFilters() {
       <span className="text-xl font-semibold mb-4">Search results for "{queryObject.title}"</span>
       <div className="flex flex-row justify-between w-full">
         <div className="flex flex-row gap-4">
+          <SearchFiltersSortBy />
           <SearchFiltersByCategory />
           <SearchFiltersByAuthor />
           <SearchFiltersPriceRange />
