@@ -3,11 +3,16 @@ describe('Should test book detail page E2E', () => {
     cy.visit('/')
   })
   it('Should show books on landing page', () => {
-    cy.getById('recently-added-section').within(() => {
-      cy.getById('book-card').should('exist')
-    })
-    cy.getById('most-popular-section').within(() => {
-      cy.getById('book-card').should('exist')
+    const sections = [
+      'recently-added-section',
+      'most-popular-section',
+      'young-section',
+      'history-section',
+      'biography-section',
+    ]
+    cy.getById('landing-page').should('exist')
+    sections.forEach((section) => {
+      cy.getById(section).should('exist')
     })
   })
 
