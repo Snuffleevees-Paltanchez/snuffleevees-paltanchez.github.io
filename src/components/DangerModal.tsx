@@ -5,7 +5,7 @@ export default function DangerModal({
   onAction,
   onClose,
   description,
-  buttonText = 'Delete',
+  buttonText = 'Mark as deleted',
 }: {
   isOpen: boolean
   onAction: () => void
@@ -24,8 +24,8 @@ export default function DangerModal({
                 {description || (
                   <>
                     Are you sure you want to mark this book as deleted? Please prefer editing prices
-                    or marking outdated prices as deleted instead. Either way, you can undo this
-                    action later.
+                    or marking prices as outdated instead. Either way, you can undo this action
+                    later.
                   </>
                 )}
               </p>

@@ -11,7 +11,7 @@ type UserSession = {
 
 export const useUserSession = () => {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently, ...authContext } = useAuth0()
-  const userSession = useUserSessionQuery()
+  const userSessionQuery = useUserSessionQuery()
   const [token, setToken] = useState<string | undefined>()
   useEffect(() => {
     if (isAuthenticated) {
@@ -20,14 +20,19 @@ export const useUserSession = () => {
       })
     }
   }, [isAuthenticated])
-  const loading = isLoading || userSession.isLoading
+  const loading = isLoading || userSessionQuery.isLoading
   const isAdmin = useMemo(
-    () => (userSession.data?.isAdmin && isAuthenticated) || false,
-    [userSession.data, isAuthenticated],
+    () => (userSessionQuery.data?.isAdmin && isAuthenticated) || false,
+    [userSessionQuery.data, isAuthenticated],
   )
 
   useEffect(() => {
     setUserSessionStorage({ token, isAdmin })
+    // We wait for the token to be set before refetching the user session
+    // to get the updated isAdmin status
+    setTimeout(() => {
+      userSessionQuery.refetch()
+    }, 500)
   }, [token, isAdmin])
   return { user, isAuthenticated, isLoading: loading, token, isAdmin, ...authContext }
 }
