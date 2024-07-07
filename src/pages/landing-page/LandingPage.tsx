@@ -11,14 +11,14 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col m-2 my-4 gap-6" data-test-id="landing-page">
       <LandingPageSection
-        sectionTitle="Recently added"
-        books={books}
-        dataTestId="recently-added-section"
-      />
-      <LandingPageSection
         sectionTitle="Most popular"
         books={sortedBooks}
         dataTestId="most-popular-section"
+      />
+      <LandingPageSection
+        sectionTitle="Recently added"
+        books={books}
+        dataTestId="recently-added-section"
       />
     </div>
   )

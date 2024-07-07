@@ -33,7 +33,13 @@ export default function SearchPage() {
               className="flex flex-row flex-wrap my-2 gap-6 justify-center"
               data-test-id="results-search"
             >
-              {booksQuery.data?.data.map((book, i) => <BookCard key={i} book={book} />)}
+              {booksQuery.data?.data.map((book, i) => (
+                <BookCard
+                  key={i}
+                  book={book}
+                  customClasses="min-w-[450px] max-w-[450px] max-h-[280px]"
+                />
+              ))}
             </div>
           )}
         </div>
