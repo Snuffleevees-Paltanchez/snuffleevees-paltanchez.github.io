@@ -17,7 +17,7 @@ export default function SearchFiltersAdmin() {
   return (
     <div>
       <Switch
-        defaultSelected={queryObject.isDeleted === 'true'}
+        isSelected={queryObject.isDeleted === 'true'}
         color="danger"
         onChange={(value) => updateQueryParams(value.target.checked)}
       >

@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowDownIcon } from 'lucide-react'
-import { Select, SelectItem } from '@nextui-org/select'
+import { Button, Select, SelectItem, Tooltip } from '@nextui-org/react'
 import { useQueryParams } from '@/hooks/useQueryParams'
-import { Button } from '@nextui-org/react'
 
 type SortByObject = {
   [key in 'sortByRating' | 'sortByRatingCount']?: 'asc' | 'desc'
@@ -33,16 +32,18 @@ export default function SearchFiltersSortBy() {
 
   return (
     <div className="flex items-center gap-1">
-      <Button
-        variant="light"
-        onClick={() => setIsDesc(!isDesc)}
-        className={isDesc ? '' : 'rotate-180'}
-        isIconOnly
-      >
-        <ArrowDownIcon />
-      </Button>
+      <Tooltip content="Sort order" placement="bottom">
+        <Button
+          variant="light"
+          className={isDesc ? '' : 'rotate-180'}
+          onClick={() => setIsDesc(!isDesc)}
+          isIconOnly
+        >
+          <ArrowDownIcon />
+        </Button>
+      </Tooltip>
       <Select
-        className="w-[150px]"
+        className="w-[180px]"
         label="Sort by"
         size="sm"
         value={sortBy}
