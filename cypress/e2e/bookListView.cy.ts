@@ -20,11 +20,17 @@ describe('Test book list page', () => {
   })
 
   it('Should show ten books on each section of the landing page', () => {
-    cy.getById('recently-added-section').within(() => {
-      cy.getById('book-card').should('have.length', 10)
-    })
-    cy.getById('most-popular-section').within(() => {
-      cy.getById('book-card').should('have.length', 10)
+    const sections = [
+      'recently-added-section',
+      'most-popular-section',
+      'young-section',
+      'history-section',
+      'biography-section',
+    ]
+    sections.forEach((section) => {
+      cy.getById(section).within(() => {
+        cy.getById('book-card').should('have.length', 10)
+      })
     })
   })
 
