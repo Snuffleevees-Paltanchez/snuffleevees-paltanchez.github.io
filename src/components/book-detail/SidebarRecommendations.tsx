@@ -35,7 +35,7 @@ export default function SidebarRecommendations({ isbn }: { isbn: string }) {
 }
 
 const SidebarWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex flex-col z-10 bg-gray-200 float-left py-5 px-5 h-full max-h-full overflow-y-scroll min-w-[450px]">
+  <div className="flex flex-col z-10 bg-gray-200 float-left py-5 px-5 h-full max-h-full min-h-screen overflow-y-scroll min-w-[450px]">
     {children}
   </div>
 )

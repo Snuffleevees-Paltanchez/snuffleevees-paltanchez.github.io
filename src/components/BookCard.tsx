@@ -42,7 +42,7 @@ export default function BookCard({
             {book.description}
           </span>
         </CardBody>
-        <CardFooter className="justify-end">
+        <CardFooter className="justify-end self-end">
           <span
             className="text-end text-secondary font-semibold text-xl"
             data-test-id="best-price-card"
