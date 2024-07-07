@@ -1,7 +1,7 @@
 import LandingPageSection from './LandingPageSection'
 import { useBooksQuery } from '@/hooks/queries/useBooks'
 import LoadingSpinner from '@/components/LoadingSpinner'
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import { type Book } from '@/hooks/queries/useBooks'
 
 export default function LandingPage() {
@@ -31,21 +31,14 @@ export default function LandingPage() {
     },
   ]
 
-  const [bookData, setBookData] = useState<{
-    [key: string]: Book[]
-  }>({
-    youngBooks: [] as Book[],
-    historyBooks: [] as Book[],
-    biographyBooks: [] as Book[],
-  })
-
-  useEffect(() => {
-    setBookData({
+  const bookData = useMemo<{ [bookCategory: string]: Book[] }>(
+    () => ({
       youngBooks: youngBooksQuery.data?.data || [],
       historyBooks: historyBooksQuery.data?.data || [],
       biographyBooks: biographyBooksQuery.data?.data || [],
-    })
-  }, [youngBooksQuery.data, historyBooksQuery.data, biographyBooksQuery.data])
+    }),
+    [youngBooksQuery.data, historyBooksQuery.data, biographyBooksQuery.data],
+  )
 
   const books = booksQuery.data?.data || []
   const sortedBooks = sortedBooksQuery.data?.data || []
@@ -66,7 +59,7 @@ export default function LandingPage() {
         />
       ))}
       <LandingPageSection
-        sectionTitle="Recently added"
+        sectionTitle="Recently Added"
         books={books}
         dataTestId="recently-added-section"
       />
