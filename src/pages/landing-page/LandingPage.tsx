@@ -4,7 +4,9 @@ import LoadingSpinner from '@/components/LoadingSpinner'
 
 export default function LandingPage() {
   const booksQuery = useBooksQuery({})
+  const sortedBooksQuery = useBooksQuery({ sortByRatingCount: 'desc' })
   const books = booksQuery.data?.data || []
+  const sortedBooks = sortedBooksQuery.data?.data || []
   if (booksQuery.isLoading) return <LoadingSpinner />
   return (
     <div className="flex flex-col m-2 my-4 gap-6" data-test-id="landing-page">
@@ -15,7 +17,7 @@ export default function LandingPage() {
       />
       <LandingPageSection
         sectionTitle="Most popular"
-        books={books}
+        books={sortedBooks}
         dataTestId="most-popular-section"
       />
     </div>
